@@ -1,0 +1,876 @@
+{
+  "groups" : [
+    {
+      "id": "ba88e5a0-475b-465c-95ed-82c9ad968813",
+      "name": "Новинки",
+      "name_uz": "Yangiliklar",
+      "name_en": "New",
+      "list_image": "https://cdn.yaponamama.uz/products/thumbs/102_1686986573.png",
+      "position": 1,
+      "parentGroup": "0",
+      "child": []
+  },
+  {
+      "id": "2c26a7a5-267c-4dd7-9ac2-e51d15cb2110",
+      "name": "Детям",
+      "name_uz": "Bolalarga",
+      "name_en": "Kids'",
+      "list_image": "https://cdn.yaponamama.uz/products/thumbs/102_1687340914.png",
+      "position": 2,
+      "parentGroup": "0",
+      "child": []
+  },
+  {
+      "id": "263ef907-4a4c-4d01-850c-d41fec5d8844",
+      "name": "Сеты",
+      "name_uz": "Setlar",
+      "name_en": "Sets",
+      "list_image": "https://cdn.yaponamama.uz/products/thumbs/102_1686986463.png",
+      "position": 3,
+      "parentGroup": "0",
+      "child": [
+          {
+              "id": "85d80a66-fb44-435f-97be-60c4c9a931cc",
+              "name": "Для больших компаний",
+              "name_uz": "Keng davralar uchun setlar",
+              "name_en": "For large companies",
+              "list_image": "102_1632915081.png",
+              "position": 1,
+              "parentGroup": "263ef907-4a4c-4d01-850c-d41fec5d8844"
+          },
+          {
+              "id": "6b9735e1-05d1-4923-a973-426c76a5abcd",
+              "name": "Мини-сеты",
+              "name_uz": "Kichik setlar",
+              "name_en": "Mini sets",
+              "list_image": "102_1626763576.png",
+              "position": 2,
+              "parentGroup": "263ef907-4a4c-4d01-850c-d41fec5d8844"
+          }
+      ]
+  },
+  {
+      "id": "c9df5dbd-ffce-4d5c-bb9d-d2e9b1bd372e",
+      "name": "Роллы",
+      "name_uz": "Rollar",
+      "name_en": "Rolls",
+      "list_image": "https://cdn.yaponamama.uz/products/thumbs/102_1686986481.png",
+      "position": 4,
+      "parentGroup": "0",
+      "child": [
+          {
+              "id": "351b9615-a650-4daf-967a-238976c05824",
+              "name": "Полпорции",
+              "name_uz": "Yarim portsiyali rollar",
+              "name_en": "Half portion",
+              "list_image": "199_1697161261.png",
+              "position": 2,
+              "parentGroup": "c9df5dbd-ffce-4d5c-bb9d-d2e9b1bd372e"
+          },
+          {
+              "id": "acaa6968-4df6-48d9-9686-f961eca1b04d",
+              "name": "Классические роллы",
+              "name_uz": "Klassik rollar",
+              "name_en": "Classic rolls",
+              "list_image": "199_1697161292.png",
+              "position": 3,
+              "parentGroup": "c9df5dbd-ffce-4d5c-bb9d-d2e9b1bd372e"
+          },
+          {
+              "id": "523c38d5-e276-41d6-89fe-e72712f7bfb4",
+              "name": "Фирменные роллы",
+              "name_uz": "Maxsus rollar",
+              "name_en": "Branded rolls",
+              "list_image": "199_1697162387.png",
+              "position": 4,
+              "parentGroup": "c9df5dbd-ffce-4d5c-bb9d-d2e9b1bd372e"
+          },
+          {
+              "id": "cd424c1c-79bb-4f82-a63b-55b69e8d2371",
+              "name": "Запечённые роллы",
+              "name_uz": "Pishirilgan rollar",
+              "name_en": "Baked rolls",
+              "list_image": "199_1697162874.png",
+              "position": 6,
+              "parentGroup": "c9df5dbd-ffce-4d5c-bb9d-d2e9b1bd372e"
+          },
+          {
+              "id": "e86c8c6d-fd46-40dd-a259-2637fa9baf2a",
+              "name": "Темпурные роллы",
+              "name_uz": "Tempura rollar",
+              "name_en": "Tempura rolls",
+              "list_image": "199_1697163095.png",
+              "position": 7,
+              "parentGroup": "c9df5dbd-ffce-4d5c-bb9d-d2e9b1bd372e"
+          },
+          {
+              "id": "1928b13b-2d44-4a3d-94df-50ddc83ba823",
+              "name": "Тонкие роллы",
+              "name_uz": "Ingichka Rollar",
+              "name_en": "Thin rolls",
+              "list_image": "199_1697163309.png",
+              "position": 9,
+              "parentGroup": "c9df5dbd-ffce-4d5c-bb9d-d2e9b1bd372e"
+          }
+      ]
+  },
+  {
+      "id": "96bce7e6-6f98-4bf5-8bfc-f149055a0736",
+      "name": "Суши",
+      "name_uz": "Sushi",
+      "name_en": "Sushi",
+      "list_image": "https://cdn.yaponamama.uz/products/thumbs/102_1686986502.png",
+      "position": 5,
+      "parentGroup": "0",
+      "child": []
+  },
+  {
+      "id": "264d82c5-c3a2-4a66-9a35-d1212a3c63f6",
+      "name": "Холодные закуски",
+      "name_uz": "Холодные закуски",
+      "name_en": "",
+      "list_image": "https://cdn.yaponamama.uz/products/thumbs/102_1697197727.png",
+      "position": 6,
+      "parentGroup": "0",
+      "child": []
+  },
+  {
+      "id": "b3686b71-ae8e-4e8c-a267-4b31eef8246a",
+      "name": "Горячие закуски",
+      "name_uz": "Горячие закуски",
+      "name_en": "",
+      "list_image": "https://cdn.yaponamama.uz/products/thumbs/102_1697197741.png",
+      "position": 7,
+      "parentGroup": "0",
+      "child": []
+  },
+  {
+      "id": "3ebe05f4-a5a0-4e15-9c5e-b180a8c08fa7",
+      "name": "Салаты",
+      "name_uz": "Salatlar va gazaklar",
+      "name_en": "Salads and appetizers",
+      "list_image": "https://cdn.yaponamama.uz/products/thumbs/102_1686986522.png",
+      "position": 8,
+      "parentGroup": "0",
+      "child": []
+  },
+  {
+      "id": "6c56ce17-ddf0-429c-a989-cbe0f6e09d0b",
+      "name": "Супы",
+      "name_uz": "Sho'rvalar",
+      "name_en": "Soups",
+      "list_image": "https://cdn.yaponamama.uz/products/thumbs/102_1686986538.png",
+      "position": 9,
+      "parentGroup": "0",
+      "child": []
+  },
+  {
+      "id": "c1eafcf4-748d-4f50-9593-b244f0f0341f",
+      "name": "Горячее",
+      "name_uz": "Issiq taomlar",
+      "name_en": "Hot dishes",
+      "list_image": "https://cdn.yaponamama.uz/products/thumbs/102_1686986553.png",
+      "position": 10,
+      "parentGroup": "0",
+      "child": [
+          {
+              "id": "1da4715e-c06e-4207-a2c0-aea046841a45",
+              "name": "Хлеб и гарниры",
+              "name_uz": "Qo'shimchalar",
+              "name_en": "Adds",
+              "list_image": "102_1697160676.png",
+              "position": 1,
+              "parentGroup": "c1eafcf4-748d-4f50-9593-b244f0f0341f"
+          },
+          {
+              "id": "2baca12d-726f-4307-a3e8-238c036489ab",
+              "name": "Вторые блюда",
+              "name_uz": "Ikkinchi taomlar",
+              "name_en": "Second courses",
+              "list_image": "102_1697161012.png",
+              "position": 4,
+              "parentGroup": "c1eafcf4-748d-4f50-9593-b244f0f0341f"
+          },
+          {
+              "id": "58a61285-1639-4600-a578-8d90383cf4a3",
+              "name": "WOK",
+              "name_uz": "WOK",
+              "name_en": "WOK",
+              "list_image": "102_1697160712.png",
+              "position": 5,
+              "parentGroup": "c1eafcf4-748d-4f50-9593-b244f0f0341f"
+          }
+      ]
+  },
+  {
+      "id": "9b52b964-7100-409f-819a-d40df4e27db9",
+      "name": "Десерты",
+      "name_uz": "Shirinliklar",
+      "name_en": "Desserts",
+      "list_image": "https://cdn.yaponamama.uz/products/thumbs/102_1686986573.png",
+      "position": 11,
+      "parentGroup": "0",
+      "child": []
+  },
+  {
+      "id": "382a2592-580f-42ea-a81c-8526b7eea6c7",
+      "name": "Cоусы",
+      "name_uz": "Qaylalar",
+      "name_en": "Sauces",
+      "list_image": "https://cdn.yaponamama.uz/products/thumbs/102_1686986589.png",
+      "position": 12,
+      "parentGroup": "0",
+      "child": []
+  },
+  {
+      "id": "840ea634-9ca9-4c22-9f09-19e4da7bf094",
+      "name": "Напитки",
+      "name_uz": "Ichimliklar",
+      "name_en": "Drinks",
+      "list_image": "https://cdn.yaponamama.uz/products/thumbs/102_1686986609.png",
+      "position": 13,
+      "parentGroup": "0"
+  },
+  {
+      "id": "4d0b6064-1e47-4895-b50b-00b9b53538ec",
+      "name": "Посуда",
+      "name_uz": "Idishlar",
+      "name_en": "Dishes",
+      "list_image": "https://cdn.yaponamama.uz/products/thumbs/102_1686986625.png",
+      "position": 14,
+      "parentGroup": "0",
+      "child": []
+  }
+  ],
+  "products" : [
+    {
+      "id": "0c1c260e-ce38-4f35-acac-8cb7a43e88c4",
+      "name": "Лимонад тархун",
+      "name_en": "Tarhun lemonade",
+      "description_en": "Tarhun syrup\r\nSugar syrup\r\nLemon juice\r\nSparkling water \r\nMint\r\nLemon",
+      "position": null,
+      "parentGroup": "2c26a7a5-267c-4dd7-9ac2-e51d15cb2110",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 20000
+  },
+  {
+      "id": "154526a7-d187-4569-b1f7-83bf6f373f95",
+      "name": "Паста том ям 400 гр.",
+      "name_en": "",
+      "description_en": "Rice\r\nCilantro\r\nGreen beans \r\nChef's salad\r\nChuka\r\nCucumber\r\nSalmon fillet\r\nAvocado\r\nRadish\r\nTobiko caviar with kim chi\r\nPonzu sauce\r\nVinaigrette sauce",
+      "position": null,
+      "parentGroup": "6edf93f4-0921-4d7c-a84f-714e6b539553",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 86000
+  },
+  {
+      "id": "1862a8c3-acac-44db-92eb-118a7b82a51d",
+      "name": "Хоккайдо 8 шт.",
+      "name_en": "",
+      "description_en": "Rice\r\nCilantro\r\nGreen beans \r\nChef's salad\r\nChuka\r\nCucumber\r\nSalmon fillet\r\nAvocado\r\nRadish\r\nTobiko caviar with kim chi\r\nPonzu sauce\r\nVinaigrette sauce",
+      "position": null,
+      "parentGroup": "cd424c1c-79bb-4f82-a63b-55b69e8d2371",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 65000
+  },
+  {
+      "id": "263ef907-4a4c-4d01-850c-d41fec5d8844",
+      "name": "Креветочные чипсы",
+      "name_en": "Crispy shrimp chips",
+      "description_en": "Shrimp chips\r\nSweet and spicy sauce",
+      "position": null,
+      "parentGroup": "264d82c5-c3a2-4a66-9a35-d1212a3c63f6",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 25000
+  },
+  {
+      "id": "26cabf48-e5ae-4e51-a27a-bd1005c6d26d",
+      "name": "Дощечка",
+      "name_en": "Tablet",
+      "description_en": "Rice\r\nCilantro\r\nGreen beans \r\nChef's salad\r\nChuka\r\nCucumber\r\nSalmon fillet\r\nAvocado\r\nRadish\r\nTobiko caviar with kim chi\r\nPonzu sauce\r\nVinaigrette sauce",
+      "position": null,
+      "parentGroup": "4d0b6064-1e47-4895-b50b-00b9b53538ec",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 15000
+  },
+  {
+      "id": "2b7e57be-3988-4441-90ac-3bb9793c973d",
+      "name": "Сэндвич классический",
+      "name_en": "",
+      "description_en": "Rice\r\nCilantro\r\nGreen beans \r\nChef's salad\r\nChuka\r\nCucumber\r\nSalmon fillet\r\nAvocado\r\nRadish\r\nTobiko caviar with kim chi\r\nPonzu sauce\r\nVinaigrette sauce",
+      "position": null,
+      "parentGroup": "b3686b71-ae8e-4e8c-a267-4b31eef8246a",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 45000
+  },
+  {
+      "id": "39b40050-7a3f-4342-b457-848080952fa5",
+      "name": "Унаги темпура 8 шт.",
+      "name_en": "",
+      "description_en": "Rice\r\nCilantro\r\nGreen beans \r\nChef's salad\r\nChuka\r\nCucumber\r\nSalmon fillet\r\nAvocado\r\nRadish\r\nTobiko caviar with kim chi\r\nPonzu sauce\r\nVinaigrette sauce",
+      "position": null,
+      "parentGroup": "e86c8c6d-fd46-40dd-a259-2637fa9baf2a",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 56000
+  },
+  {
+      "id": "3a7a70cb-6e74-4784-bd03-ce1b4a6636ba",
+      "name": "Гёдза с курицей",
+      "name_en": "Gyoza with chicken",
+      "description_en": "Minced chicken (onion, carrot, Chinese cabbage, garlic, ginger, starch noodles, vegetable oil, salt, pepper)\r\nVietnamese fish sauce",
+      "position": null,
+      "parentGroup": "9b52b964-7100-409f-819a-d40df4e27db9",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 55000
+  },
+  {
+      "id": "3aa4fb38-8775-434e-a352-f8d0e176c019",
+      "name": "Поке с лососем",
+      "name_en": "Poke with salmon",
+      "description_en": "Rice\r\nCilantro\r\nGreen beans \r\nChef's salad\r\nChuka\r\nCucumber\r\nSalmon fillet\r\nAvocado\r\nRadish\r\nTobiko caviar with kim chi\r\nPonzu sauce\r\nVinaigrette sauce",
+      "position": null,
+      "parentGroup": "264d82c5-c3a2-4a66-9a35-d1212a3c63f6",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 83000
+  },
+  {
+      "id": "3b8d807c-7cc4-4c06-8896-69018c5d5329",
+      "name": "Соус сладкий чили 50 гр",
+      "name_en": "",
+      "description_en": "Rice\r\nCilantro\r\nGreen beans \r\nChef's salad\r\nChuka\r\nCucumber\r\nSalmon fillet\r\nAvocado\r\nRadish\r\nTobiko caviar with kim chi\r\nPonzu sauce\r\nVinaigrette sauce",
+      "position": null,
+      "parentGroup": "c9df5dbd-ffce-4d5c-bb9d-d2e9b1bd372e",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 12000
+  },
+  {
+      "id": "3f11a61e-e841-4767-aa2c-6c33da04bb68",
+      "name": "Поке с тунцом",
+      "name_en": "Poke with tuna",
+      "description_en": "Rice \r\nChuka\r\nThai vinaigrette sauce\r\nRed onion\r\nCucumber\r\nTuna\r\nAvocado\r\nRadish\r\nChef's salad\r\nTobiko caviar with kim chi \r\nPonzu sauce\r\nJapanese spicy sauce\r\nCilantro\r\nLime\r\nSesame",
+      "position": null,
+      "parentGroup": "264d82c5-c3a2-4a66-9a35-d1212a3c63f6",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 83000
+  },
+  {
+      "id": "47dd5773-16fd-4885-b3b3-0726d6939552",
+      "name": "Пакет",
+      "name_en": "Package",
+      "description_en": "Rice\r\nCilantro\r\nGreen beans \r\nChef's salad\r\nChuka\r\nCucumber\r\nSalmon fillet\r\nAvocado\r\nRadish\r\nTobiko caviar with kim chi\r\nPonzu sauce\r\nVinaigrette sauce",
+      "position": null,
+      "parentGroup": "4d0b6064-1e47-4895-b50b-00b9b53538ec",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png"
+  },
+  {
+      "id": "6aaf1c25-dd1d-4f3a-b88d-9f41f2843c47",
+      "name": "Угорь плашки",
+      "name_en": "Eel dice",
+      "description_en": "Eel unagi dice (200 gr)",
+      "position": null,
+      "parentGroup": "6edf93f4-0921-4d7c-a84f-714e6b539553",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 190000
+  },
+  {
+      "id": "74c90555-9102-4043-baa9-78236282c994",
+      "name": "Кетчуп",
+      "name_en": "",
+      "description_en": "Rice\r\nCilantro\r\nGreen beans \r\nChef's salad\r\nChuka\r\nCucumber\r\nSalmon fillet\r\nAvocado\r\nRadish\r\nTobiko caviar with kim chi\r\nPonzu sauce\r\nVinaigrette sauce",
+      "position": null,
+      "parentGroup": "382a2592-580f-42ea-a81c-8526b7eea6c7",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 6000
+  },
+  {
+      "id": "91a8dac0-4e75-4cc5-80b1-dc7114de82fc",
+      "name": "Лимонад малина-маракуйя",
+      "name_en": "Raspberry-passion fruit lemonade",
+      "description_en": "Passion fruit puree\r\nSugar syrup\r\nRaspberry syrup\r\nLime \r\nSparkling water\r\nMint",
+      "position": null,
+      "parentGroup": "840ea634-9ca9-4c22-9f09-19e4da7bf094",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 37000
+  },
+  {
+      "id": "98e20492-39c3-4de0-8db6-bb06f0d44d7a",
+      "name": "Лимонад манго-кокос",
+      "name_en": "Mango-coconut lemonade",
+      "description_en": "Orange juice \r\nMango puree\r\nCoconut syrup\r\nLemon juice\r\nMint \r\nOrange \r\nSparkling water",
+      "position": null,
+      "parentGroup": "840ea634-9ca9-4c22-9f09-19e4da7bf094",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 32000
+  },
+  {
+      "id": "a695781c-a09d-4418-8b1b-aea3ff2fda26",
+      "name": "Filaboom 6 шт.",
+      "name_en": "",
+      "description_en": "Rice\r\nCilantro\r\nGreen beans \r\nChef's salad\r\nChuka\r\nCucumber\r\nSalmon fillet\r\nAvocado\r\nRadish\r\nTobiko caviar with kim chi\r\nPonzu sauce\r\nVinaigrette sauce",
+      "position": null,
+      "parentGroup": "e86c8c6d-fd46-40dd-a259-2637fa9baf2a",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 35000
+  },
+  {
+      "id": "ad862acd-0277-4334-8027-572ead17800c",
+      "name": "Палочки (дополнительные)",
+      "name_en": "Sticks (optional)",
+      "description_en": "Rice\r\nCilantro\r\nGreen beans \r\nChef's salad\r\nChuka\r\nCucumber\r\nSalmon fillet\r\nAvocado\r\nRadish\r\nTobiko caviar with kim chi\r\nPonzu sauce\r\nVinaigrette sauce",
+      "position": null,
+      "parentGroup": "4d0b6064-1e47-4895-b50b-00b9b53538ec",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 1500
+  },
+  {
+      "id": "ae29fedd-0249-483f-84c7-f8e1b468b420",
+      "name": "Нэм с курицей",
+      "name_en": "Nem with chicken",
+      "description_en": "Minced chicken (onion, carrot, Chinese cabbage, garlic, ginger, starch noodles, vegetable oil, salt, pepper)\r\nThin wheat dough\r\nHot and sweet sauce",
+      "position": null,
+      "parentGroup": "b3686b71-ae8e-4e8c-a267-4b31eef8246a",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 55000
+  },
+  {
+      "id": "f0b3b795-ceb2-43bd-893a-1c455b9fc1f1",
+      "name": "Кунг пао",
+      "name_en": "Kung pao Rice\r\nCilantro\r\nGreen beans \r\nChef's salad\r\nChuka\r\nCucumber\r\nSalmon fillet\r\nAvocado\r\nRadish\r\nTobiko caviar with kim chi\r\nPonzu sauce\r\nVinaigrette sauce",
+      "description_en": "Chicken fillet \r\nOnions\r\nDried red chili pepper\r\nPeanuts\r\nSoy sauce\r\nStarch\r\nSweet chili sauce\r\nSpring onions",
+      "position": null,
+      "parentGroup": "6c56ce17-ddf0-429c-a989-cbe0f6e09d0b",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 55000
+  },
+  {
+      "id": "f55cc36d-b3dc-4910-97d7-029921d7f56e",
+      "name": "Битые огурцы",
+      "name_en": "Beaten cucumbers",
+      "description_en": "Cucumber\r\nSesame\r\nSoy sauce\r\nChili pepper\r\nSesame oil \r\nGarlic\r\nCashews",
+      "position": null,
+      "parentGroup": "264d82c5-c3a2-4a66-9a35-d1212a3c63f6",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 28000
+  },
+  {
+      "id": "f6c6179f-06bb-4edd-a201-7e12cc62af64",
+      "name": "Лепёшка ротти с лососем и авокадо",
+      "name_en": "Rotti with salmon and avocado",
+      "description_en": "Puff pastry \r\nSpinach \r\nOnions \r\nGarlic\r\nCream cheese\r\nSalmon\r\nAvocado\r\nTobiko caviar with kim chi\r\nRucola",
+      "position": null,
+      "parentGroup": "264d82c5-c3a2-4a66-9a35-d1212a3c63f6",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 72000
+  },
+  {
+      "id": "12bfe343-2a37-48a3-aa04-7ef8b55a145e",
+      "name": "Pepsi 0,25L",
+      "name_en": "Pepsi 0,25L",
+      "description_en": "Rice\r\nCilantro\r\nGreen beans \r\nChef's salad\r\nChuka\r\nCucumber\r\nSalmon fillet\r\nAvocado\r\nRadish\r\nTobiko caviar with kim chi\r\nPonzu sauce\r\nVinaigrette sauce",
+      "position": 1,
+      "parentGroup": "840ea634-9ca9-4c22-9f09-19e4da7bf094",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 8000
+  },
+  {
+      "id": "2ed543a5-7822-441a-bff9-1e630c7984f6",
+      "name": "Васаби",
+      "name_en": "Wasabi",
+      "description_en": "Wasabi - 30 gr.",
+      "position": 1,
+      "parentGroup": "382a2592-580f-42ea-a81c-8526b7eea6c7",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 12000
+  },
+  {
+      "id": "5090e2ab-97bb-4525-8d03-28ad593f5660",
+      "name": "Говядина в сливочном соусе",
+      "name_en": "Beef in a creamy sauce",
+      "description_en": "Ingredients:\r\nBeef \r\nRustic style potatoes\r\nOnions\r\nOyster mushrooms\r\nCream\r\nSignature sauce\r\nSpring onions \r\nSpices",
+      "position": 1,
+      "parentGroup": "2baca12d-726f-4307-a3e8-238c036489ab",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 73000
+  },
+  {
+      "id": "71866137-5452-4bb0-96fb-0401f7a11969",
+      "name": "Филадельфия Classic 4 кусочка",
+      "name_en": "Philadelphia Classic 4 pcs.",
+      "description_en": "Delicate cream cheese, fresh cucumber and noble salmon. The embodiment of all the subtlety and grace of taste at its best in the most classic roll.\r\n\r\nIngredients:\r\nSalmon\r\nCream cheese\r\nCucumber",
+      "position": 1,
+      "parentGroup": "c1eafcf4-748d-4f50-9593-b244f0f0341f",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 47000
+  },
+  {
+      "id": "8cb84dd9-07aa-48c5-a66d-70d161cd8ed4",
+      "name": "Капуста кимчи",
+      "name_en": "Kimchi cabbage",
+      "description_en": "Ingredients:\r\nNapa cabbage\r\nCarrot\r\nKimchi sauce\r\nGarlic\r\nRed pepper\r\nGreen onion",
+      "position": 1,
+      "parentGroup": "263ef907-4a4c-4d01-850c-d41fec5d8844",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 29000
+  },
+  {
+      "id": "9072e085-acc7-42d5-8d5d-b3b54a7bd3d9",
+      "name": "Палочки",
+      "name_en": "Sticks",
+      "description_en": "Ingredients:\r\nNapa cabbage\r\nCarrot\r\nKimchi sauce\r\nGarlic\r\nRed pepper\r\nGreen onion",
+      "position": 1,
+      "parentGroup": "4d0b6064-1e47-4895-b50b-00b9b53538ec",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 50000
+  },
+  {
+      "id": "b9ec3ac8-e875-4f35-a31a-4954627768b4",
+      "name": "Лосось норвежский охлажденный",
+      "name_en": "",
+      "description_en": "Rice\r\nCilantro\r\nGreen beans \r\nChef's salad\r\nChuka\r\nCucumber\r\nSalmon fillet\r\nAvocado\r\nRadish\r\nTobiko caviar with kim chi\r\nPonzu sauce\r\nVinaigrette sauce",
+      "position": 1,
+      "parentGroup": "263ef907-4a4c-4d01-850c-d41fec5d8844",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 255000
+  },
+  {
+      "id": "07a50be2-6331-4727-a12c-6cf296842a92",
+      "name": "Лосось стейк",
+      "name_en": "",
+      "description_en": "Rice\r\nCilantro\r\nGreen beans \r\nChef's salad\r\nChuka\r\nCucumber\r\nSalmon fillet\r\nAvocado\r\nRadish\r\nTobiko caviar with kim chi\r\nPonzu sauce\r\nVinaigrette sauce",
+      "position": 2,
+      "parentGroup": "6edf93f4-0921-4d7c-a84f-714e6b539553",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 169000
+  },
+  {
+      "id": "53cde81b-f974-434e-896c-6eb4b96ce6cf",
+      "name": "Имбирь маринованный",
+      "name_en": "Marinated ginger",
+      "description_en": "Marinated ginger - 50 gr.",
+      "position": 2,
+      "parentGroup": "382a2592-580f-42ea-a81c-8526b7eea6c7",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 12000
+  },
+  {
+      "id": "76b8e63f-ea74-413b-9228-280edd7abc6a",
+      "name": "Шаурма с курицей и кимчи",
+      "name_en": "Chicken and kimchi shawarma",
+      "description_en": "Ingredients:\r\nChicken fillet\r\nSpring roll wrappers (Harumaki)\r\nCream cheese\r\nBurger sauce\r\nCucumbers\r\nKimchi cabbage\r\nRice",
+      "position": 2,
+      "parentGroup": "ba88e5a0-475b-465c-95ed-82c9ad968813",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 35000
+  },
+  {
+      "id": "76ce40bd-b875-49dd-a07a-5d4297508f0b",
+      "name": "Филадельфия Classic 8 шт.",
+      "name_en": "Philadelphia Classic 8 pcs.",
+      "description_en": "Delicate cream cheese, fresh cucumber and noble salmon. The embodiment of all the subtlety and grace of taste at its best in the most classic roll.\r\n\r\nIngredients:\r\nSalmon\r\nCream cheese\r\nCucumber",
+      "position": 2,
+      "parentGroup": "acaa6968-4df6-48d9-9686-f961eca1b04d",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 89000
+  },
+  {
+      "id": "e0a96227-1cf3-422d-bade-bc56496a2835",
+      "name": "Pepsi 0,5L",
+      "name_en": "Pepsi 0,5L",
+      "description_en": "",
+      "position": 2,
+      "parentGroup": "840ea634-9ca9-4c22-9f09-19e4da7bf094",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 10000
+  },
+  {
+      "id": "fe79f51e-477f-4fe5-b635-522dfcdcb77c",
+      "name": "Лосось нигири",
+      "name_en": "Nigiri salmon",
+      "description_en": "A whole set of biologically active substances and amino acids in red fish.\r\n\r\nIngredients:\r\nSalmon\r\nRice\r\nWasabi",
+      "position": 2,
+      "parentGroup": "96bce7e6-6f98-4bf5-8bfc-f149055a0736",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 19000
+  },
+  {
+      "id": "168e4b65-d27c-43c7-80ac-1d5c44994cb0",
+      "name": "Салат греческий",
+      "name_en": "Greek salad",
+      "description_en": "Ingredients:\r\nCucumbers\r\nCherry tomatoes\r\nBell pepper\r\nOlives\r\nLettuce leaves\r\nArugula\r\nRed onion\r\nFeta cheese\r\nBalsamic glaze\r\nBasil oil\r\nOlive oil\r\nApple cider vinegar",
+      "position": 3,
+      "parentGroup": "ba88e5a0-475b-465c-95ed-82c9ad968813",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 35000
+  },
+  {
+      "id": "2511299e-1eaa-42bc-8571-a25de42691d2",
+      "name": "Соус Киккоман",
+      "name_en": "Kikkoman sauce",
+      "description_en": "Kikkoman sauce - 50 gr.",
+      "position": 3,
+      "parentGroup": "382a2592-580f-42ea-a81c-8526b7eea6c7",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 12000
+  },
+  {
+      "id": "4391e0c3-b084-41c6-84f0-0569e3e3943b",
+      "name": "Копчёный лосось нигири",
+      "name_en": "Nigiri smoked salmon",
+      "description_en": "Smoked salmon is rich in omega-3 acids and vitamin E, which is an excellent antioxidant.\r\n\r\nIngredients:\r\nSmoked salmon\r\nRice",
+      "position": 3,
+      "parentGroup": "96bce7e6-6f98-4bf5-8bfc-f149055a0736",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 19000
+  },
+  {
+      "id": "5096da57-2b2f-4afa-a8fe-0c6a74a04a7e",
+      "name": "Pepsi 1L",
+      "name_en": "Pepsi 1L",
+      "description_en": "Rice\r\nCilantro\r\nGreen beans \r\nChef's salad\r\nChuka\r\nCucumber\r\nSalmon fillet\r\nAvocado\r\nRadish\r\nTobiko caviar with kim chi\r\nPonzu sauce\r\nVinaigrette sauce",
+      "position": 3,
+      "parentGroup": "840ea634-9ca9-4c22-9f09-19e4da7bf094",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 13000
+  },
+  {
+      "id": "77635c44-8e94-4bef-a82e-24d140ced65e",
+      "name": "Сендо сарада",
+      "name_en": "Sendo sarada",
+      "description_en": "Fresh vegetables with olive oil.\r\n\r\nIngredients:\r\nTomatoes\r\nCherry tomatoes\r\nCucumber\r\nLettuce\r\nShallot\r\nSpecial sauce\r\nBasil\r\nApple vinegar\r\nSpices\r\nDried olives",
+      "position": 3,
+      "parentGroup": "3ebe05f4-a5a0-4e15-9c5e-b180a8c08fa7",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 29000
+  },
+  {
+      "id": "938402d7-bf76-4c54-bda5-8ecde24a2757",
+      "name": "Сет Китана 92 шт.",
+      "name_en": "Set Kitana 92 pcs.",
+      "description_en": "Composition:\r\n\r\nSauces:\r\nWasabi - 110 gr.\r\nGinger - 165 gr.\r\nKikkoman - 330 gr.\r\n\r\nSet for 7-8 persons\r\nSets for delivery and take away are carried out in boxes",
+      "position": 3,
+      "parentGroup": "85d80a66-fb44-435f-97be-60c4c9a931cc",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 799000
+  },
+  {
+      "id": "0f56f1bd-efda-436d-b1b2-5a76b618f49d",
+      "name": "Унаги соус",
+      "name_en": "Unagi sauce",
+      "description_en": "Unagi sauce - 50 gr.",
+      "position": 4,
+      "parentGroup": "382a2592-580f-42ea-a81c-8526b7eea6c7",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 12000
+  },
+  {
+      "id": "5c551fe6-fdbd-41e9-b6e6-a6c5cc070cc1",
+      "name": "Эби сарада",
+      "name_en": "Ebi sarada",
+      "description_en": "Juicy shrimps, fresh tomatoes, seasoned with lemon juice, make an amazing combination of flavors.\r\n\r\nIngredients:\r\nTiger shrimps\r\nTomatoes\r\nCucumber\r\nBell pepper\r\nLettuce\r\nLemon fresh\r\nBlack pepper\r\nBasil\r\nSpices\r\nDried olives",
+      "position": 4,
+      "parentGroup": "3ebe05f4-a5a0-4e15-9c5e-b180a8c08fa7",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 72000
+  },
+  {
+      "id": "a178c56b-b81d-43c5-bb3b-73d5e5163f2f",
+      "name": "Креветки тигровые 21/25",
+      "name_en": "",
+      "description_en": "Rice\r\nCilantro\r\nGreen beans \r\nChef's salad\r\nChuka\r\nCucumber\r\nSalmon fillet\r\nAvocado\r\nRadish\r\nTobiko caviar with kim chi\r\nPonzu sauce\r\nVinaigrette sauce",
+      "position": 4,
+      "parentGroup": "6edf93f4-0921-4d7c-a84f-714e6b539553",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 70000
+  },
+  {
+      "id": "bb138d09-15a4-47e4-afc8-44ad4908bf12",
+      "name": "Сет Биг Бен 57 шт.",
+      "name_en": "Set Big Ben 57 pcs.",
+      "description_en": "More hot, baked rolls mixed with cold classics in a large and incredibly nourishing set.\r\n\r\nComposition:\r\n\r\nPhiladelphia Classic - 4 pcs.\r\nPhiladelphia with eel - 4 pcs.\r\nCreamy tuna - 4 pcs.\r\nGourmet maki - 4 pcs.\r\nUnagi maki - 4 pcs.\r\nTobi California - 4 pcs.\r\nAkibuto - 4 pcs.\r\nKiiro tempura - 4 pcs.\r\nAmericano - 5 pcs.\r\nMiniroll with tuna - 6 pcs.\r\nMiniroll with salmon - 6 pcs.\r\nKhokkaido - 8 pcs.\r\n\r\nSauces:\r\nWasabi - 70 gr.\r\nGinger - 105 gr.\r\nKikkoman - 210 gr.\r\n\r\nSet for 4-5 persons\r\nSets for delivery and take away are carried out in boxes",
+      "position": 4,
+      "parentGroup": "85d80a66-fb44-435f-97be-60c4c9a931cc",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 460000
+  },
+  {
+      "id": "ce9b12c6-8d0f-40c2-b1f2-0ecb7cd53081",
+      "name": "Pepsi 1,5L",
+      "name_en": "Pepsi 1,5L",
+      "description_en": "Rice\r\nCilantro\r\nGreen beans \r\nChef's salad\r\nChuka\r\nCucumber\r\nSalmon fillet\r\nAvocado\r\nRadish\r\nTobiko caviar with kim chi\r\nPonzu sauce\r\nVinaigrette sauce",
+      "position": 4,
+      "parentGroup": "840ea634-9ca9-4c22-9f09-19e4da7bf094",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 16000
+  },
+  {
+      "id": "f3045c88-610b-4763-9067-c075d4cf5d24",
+      "name": "Креветка нигири",
+      "name_en": "Nigiri shrimp",
+      "description_en": "A healthy source of protein with fewer calories.\r\n\r\nIngredients:\r\nShrimp\r\nRice\r\nWasabi",
+      "position": 4,
+      "parentGroup": "96bce7e6-6f98-4bf5-8bfc-f149055a0736",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 17000
+  },
+  {
+      "id": "f933a50c-910b-4b3a-90c5-3b0f47e5e398",
+      "name": "Салат из баклажанов",
+      "name_en": "Eggplant salad",
+      "description_en": "Ingredients:\r\nFried eggplants\r\nTomatoes\r\nCream cheese\r\nKimchi sauce\r\nSweet chili sauce\r\nCilantro\r\nBasil oil\r\nDried olives",
+      "position": 4,
+      "parentGroup": "ba88e5a0-475b-465c-95ed-82c9ad968813",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 39000
+  },
+  {
+      "id": "2decde41-ad97-445b-bb2c-4dd4dffc8288",
+      "name": "Сливочный лосось 4 кусочка",
+      "name_en": "Creamy salmon 4 pcs.",
+      "description_en": "The most delicate combination of fresh salmon, cream cheese and rice, now in an even lighter form.\r\n\r\nIngredients:\r\nSalmon\r\nCream cheese\r\nCucumber",
+      "position": 5,
+      "parentGroup": "351b9615-a650-4daf-967a-238976c05824",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 35000
+  },
+  {
+      "id": "603fe9af-2fd0-4b30-9358-9c335be7395c",
+      "name": "Сет Фудзи 26 шт.",
+      "name_en": "Fuji Set - 26 pieces.",
+      "description_en": "Creamy Salmon - 4 pcs.\r\nAkibuto - 4 pcs.\r\nGourmet Maki - 4 pcs.\r\nBaked Uzumi - 4 pcs.\r\nShanghai - 5 pcs.\r\nHonsyu - 5 pcs.\r\n\r\nSauces:\r\nWasabi - 30g\r\nGinger - 45g\r\nKikkoman - 90g\r\n\r\n*for 1-2 persons",
+      "position": 5,
+      "parentGroup": "ba88e5a0-475b-465c-95ed-82c9ad968813",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 233000
+  },
+  {
+      "id": "6870aba3-7ef2-4cd6-80fc-ae75ad73f768",
+      "name": "Стейк Тунца (ААА)",
+      "name_en": "",
+      "description_en": "Rice\r\nCilantro\r\nGreen beans \r\nChef's salad\r\nChuka\r\nCucumber\r\nSalmon fillet\r\nAvocado\r\nRadish\r\nTobiko caviar with kim chi\r\nPonzu sauce\r\nVinaigrette sauce",
+      "position": 5,
+      "parentGroup": "6edf93f4-0921-4d7c-a84f-714e6b539553",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 170000
+  },
+  {
+      "id": "bcadbcee-024a-4bd2-bcd7-f039e48fa5ac",
+      "name": "Хлеб с соусом тартар",
+      "name_en": "Bread with tartar sauce",
+      "description_en": "Crispy bread baked with tartar sauce.\r\n\r\nIngredients:\r\nBread\r\nTartar sauce\r\nSesame",
+      "position": 5,
+      "parentGroup": "1da4715e-c06e-4207-a2c0-aea046841a45",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 12000
+  },
+  {
+      "id": "dc15b76c-0f25-4bfc-aebd-ddf7ea36ed61",
+      "name": "Спайси соус",
+      "name_en": "Spicy sauce",
+      "description_en": "Spicy sauce - 50 gr.",
+      "position": 5,
+      "parentGroup": "382a2592-580f-42ea-a81c-8526b7eea6c7",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 12000
+  },
+  {
+      "id": "feeeedcc-3867-4274-8911-db4690a77e2a",
+      "name": "Кани сарада",
+      "name_en": "Kani sarada",
+      "description_en": "Delicate crab mix with tartar sauce and flying fish roe has an excellent taste.\r\n\r\nIngredients:\r\nCrab mix\r\nCucumber\r\nLettuce\r\nRice\r\nFlying fish roe\r\nTartar sauce\r\nFried batter\r\nFried kim\r\nSesame\r\nSpices",
+      "position": 5,
+      "parentGroup": "3ebe05f4-a5a0-4e15-9c5e-b180a8c08fa7",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 33000
+  },
+  {
+      "id": "385da93e-9079-4eeb-8062-e2f14dd6ce45",
+      "name": "Филадельфия кунсей 8 шт.",
+      "name_en": "Philadelphia Kansai - 8 pieces.",
+      "description_en": "Ingredients:\r\nSmoked salmon\r\nCrab mix\r\nLettuce leaves\r\nCream cheese\r\nMayonnaise\r\nCucumber",
+      "position": 6,
+      "parentGroup": "ba88e5a0-475b-465c-95ed-82c9ad968813",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 79000
+  },
+  {
+      "id": "3b444188-ca21-4da8-b3c3-dc6a1ac2c0f4",
+      "name": "Угорь нигири",
+      "name_en": "Nigiri eel",
+      "description_en": "A real source of energy and youth.\r\n\r\nIngredients:\r\nEel\r\nNori\r\nRice\r\nUnagi sauce\r\nSesame",
+      "position": 6,
+      "parentGroup": "96bce7e6-6f98-4bf5-8bfc-f149055a0736",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 29000
+  },
+  {
+      "id": "90f7efb3-479d-4cae-84ff-e95593a003ef",
+      "name": "Ореховый соус",
+      "name_en": "Nut sauce",
+      "description_en": "Nut sauce - 50 gr.",
+      "position": 6,
+      "parentGroup": "382a2592-580f-42ea-a81c-8526b7eea6c7",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 12000
+  },
+  {
+      "id": "dd10156a-e7ef-44dd-bae9-dadc37dd47c1",
+      "name": "Микадо сарада",
+      "name_en": "Mikado sarada",
+      "description_en": "Noble salad with crispy croutons and spicy taste.\r\n\r\nIngredients:\r\nGrilled chicken\r\nLettuce leaves\r\nIceberg lettuce\r\nCherry tomatoes\r\nCroutons\r\nCaesar sauce\r\nHard cheese\r\nQuail egg\r\nDried olives",
+      "position": 6,
+      "parentGroup": "3ebe05f4-a5a0-4e15-9c5e-b180a8c08fa7",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 50000
+  },
+  {
+      "id": "dd639bf4-4daa-42c4-a624-2f8e78c15142",
+      "name": "Сок Ананас",
+      "name_en": "Pineapple juice",
+      "description_en": "Rice\r\nCilantro\r\nGreen beans \r\nChef's salad\r\nChuka\r\nCucumber\r\nSalmon fillet\r\nAvocado\r\nRadish\r\nTobiko caviar with kim chi\r\nPonzu sauce\r\nVinaigrette sauce",
+      "position": 6,
+      "parentGroup": "840ea634-9ca9-4c22-9f09-19e4da7bf094",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 20000
+  },
+  {
+      "id": "f806edb0-6ec8-4f14-a767-3221c631160b",
+      "name": "Сливочный лосось 8 шт.",
+      "name_en": "Creamy salmon 8 pcs.",
+      "description_en": "The most delicate combination of fresh salmon, cream cheese and rice, now in an even lighter form.\r\n\r\nIngredients:\r\nSalmon\r\nCream cheese\r\nCucumber",
+      "position": 6,
+      "parentGroup": "acaa6968-4df6-48d9-9686-f961eca1b04d",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 65000
+  },
+  {
+      "id": "39cda786-8c44-43b4-9f0f-cf1b711484b1",
+      "name": "Сет Сейтен 52 шт.",
+      "name_en": "Set Seyten 52 pcs.",
+      "description_en": "An abundance of flavors in bright colors will give you unforgettable emotions.\r\n\r\n\r\n\r\nSauces:\r\nWasabi - 60 gr.\r\nGinger - 90 gr.\r\nKikkoman - 180 gr.\r\n\r\nSet for 4-5 persons\r\nSets for delivery and take away are carried out in boxes",
+      "position": 7,
+      "parentGroup": "85d80a66-fb44-435f-97be-60c4c9a931cc",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 359000
+  },
+  {
+      "id": "472618e3-a59d-434d-b819-66388dda34fb",
+      "name": "Сок Апельсин",
+      "name_en": "Orange juice",
+      "description_en": "Rice\r\nCilantro\r\nGreen beans \r\nChef's salad\r\nChuka\r\nCucumber\r\nSalmon fillet\r\nAvocado\r\nRadish\r\nTobiko caviar with kim chi\r\nPonzu sauce\r\nVinaigrette sauce",
+      "position": 7,
+      "parentGroup": "840ea634-9ca9-4c22-9f09-19e4da7bf094",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 20000
+  },
+  {
+      "id": "705abd6d-7fe5-4df2-b43c-d307746f492a",
+      "name": "Карри сарада",
+      "name_en": "Сurry sarada",
+      "description_en": "Delicate chicken fillet with cherry tomatoes and Chinese cabbage with curry sauce.\r\n\r\nIngredients:\r\nGrilled chicken\r\nChinese cabbage\r\nLettuce leaves\r\nCucumber\r\nTomatoes\r\nCherry tomatoes\r\nCurry sauce\r\nDried olives",
+      "position": 7,
+      "parentGroup": "3ebe05f4-a5a0-4e15-9c5e-b180a8c08fa7",
+      "image": "https://cdn.yaponamama.uz/products/thumbs/102_1685540840.png",
+      "price": 30000
+  }
+  ]
+}
