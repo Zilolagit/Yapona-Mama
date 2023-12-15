@@ -5,8 +5,8 @@
                 <img :src="`${product.image}`" alt="productName">
                 <h3>{{ product.name }}</h3>
                 <p>{{ product.description_en }}</p>
-                <div class="box__info">
-                    <h4>{{ product.price }}</h4>
+                <div class="box__info" v-if="product.price">
+                    <h4>{{ product.price.toLocaleString() }}</h4>
                     <button class="btn btn-danger box__btn" v-if="product.count == 0"
                         @click="wantBtn(product)">Hoxlayman</button>
                     <div class="count" v-else>
@@ -29,7 +29,6 @@ export default {
     data() {
         return {
             totalChosenCount : 0,
-
         }
     },
     props : ["link", "groupid"],
@@ -49,17 +48,19 @@ export default {
     methods: {
         wantBtn(p) {
             p.count += 1
+            this.cardsStore.payment += p.price
             if (!this.cardsStore.wishlist.includes(p) ){
                 this.cardsStore.wishlist.push(p)
             }
-            console.log(this.cardsStore.wishlist);
 
         },
         unwantedBtn(p) {
             p.count -= 1
-            this.cardsStore.wishlist = this.cardsStore.wishlist.filter(card => card.id != p.id)
-            console.log(this.cardsStore.wishlist);
-        }
+            if (p.count <= 0){
+                this.cardsStore.wishlist = this.cardsStore.wishlist.filter(card => card.id != p.id)
+            }
+            this.cardsStore.payment -= p.price
+        },
     },
 }
 </script>
@@ -177,7 +178,7 @@ export default {
             border: 1px solid #fff;
             position: relative;
             box-shadow: 0 2px 36px rgba(0, 0, 0, .19);
-            z-index: 9999;
+            z-index: 1;
         }
 
         h3 {

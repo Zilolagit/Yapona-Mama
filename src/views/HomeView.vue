@@ -113,7 +113,7 @@ export default {
     box-shadow: 0 2px 2px rgba(0, 0, 0, .1);
     margin-bottom: 50px;
     position: sticky;
-    z-index: 999999999;
+    z-index: 10;
     width: 100%;
     left: 0;
     top: 65px;

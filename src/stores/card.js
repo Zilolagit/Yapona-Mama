@@ -5,6 +5,9 @@ export const useCardsStore = defineStore('cards', {
         return {
           wishlist : [],
           products : [],
+          payment : 0,
+          username: "",
+          telNumber : "",
         }
     },
 })
