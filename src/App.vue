@@ -2,18 +2,28 @@
 import { RouterLink, RouterView } from 'vue-router'
 import { mapStores } from "pinia";
 import { useCardsStore } from "@/stores/card";
+import { toast } from 'vue3-toastify';
+import 'vue3-toastify/dist/index.css';
+import axios from "axios"
+
 export default {
   data() {
     return {
-      pop: false,
+      showRegister: false,
+      enteredNumber: "",
+      enteredName: "",
     }
   },
   computed: {
     ...mapStores(useCardsStore)
   },
   mounted() {
+    let progress = this.$progress.start();
     this.cardsStore.username = localStorage.getItem("username") || ""
     this.cardsStore.telNumber = localStorage.getItem("telNumber") || ""
+    if (this.cardsStore.products) {
+      progress.finish()
+    }
   },
   methods: {
     increase(p) {
@@ -30,22 +40,63 @@ export default {
       }
       this.cardsStore.payment -= p.price
     },
-    submitBooking(){
-      console.log(this.cardsStore.username, this.cardsStore.telNumber);
+    async sendRequest() {
+      let counter = 1
+      let text = ""
+      let now = new Date()
+      let current = `${now.getDate()}/${now.getMonth() + 1}/${now.getFullYear()}`
+      let time = `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`
+      for (let i = 0; i < this.cardsStore.wishlist.length; i++) {
+        text += `%0AProduct ${counter}:%0AId: ${this.cardsStore.wishlist[i].id}%0AName: ${this.cardsStore.wishlist[i].name}%0ACount: ${this.cardsStore.wishlist[i].count}%0A`
+        counter++
+      }
+      let response = await axios.get(`https://api.telegram.org/bot6715697333:AAEmAxIpoi8Wyb2C0ObJpZOOtLXkOVQGI3Q/sendMessage?chat_id=237282713&text=Date: ${current} ${time}%0AUsername: ${this.cardsStore.username}%0ATelephone Number: ${this.cardsStore.telNumber}%0A%0ABookings:%0A${text}%0A%0ATotal Payment: ${this.cardsStore.payment.toLocaleString()} so'm`)
+      console.log(response);
+    },
+    submitBooking() {
+      if (this.showRegister) {
+        localStorage.setItem("username", this.enteredName)
+        localStorage.setItem("telNumber", this.enteredNumber)
+        toast.success("Successfully created account", {
+          autoClose: 1000,
+          theme: "colored"
+        });
+        this.enteredNumber = ""
+        this.showRegister = false
+      } else {
+        this.cardsStore.username = localStorage.getItem("username") || ""
+        this.cardsStore.telNumber = localStorage.getItem("telNumber") || ""
+        if (this.cardsStore.telNumber == this.enteredNumber) {
+          toast.info("We send your request. We will contact with you, soon !", {
+            autoClose: 1000,
+            theme: "colored"
+          });
+          this.sendRequest()
+          for (let i = 0; i < this.cardsStore.wishlist.length; i++) {
+            this.cardsStore.wishlist[i].count = 0
+          }
+          this.cardsStore.wishlist = []
+          this.cardsStore.payment = 0
+        } else {
+          toast.error("We didn't registered this number yet", {
+            autoClose: 1000,
+            theme: "colored"
+          });
+        }
+      }
     }
-
   },
 }
 
 </script>
 
 <template>
+  <vue3-progress-bar></vue3-progress-bar>
   <header class="header">
     <div class="container-fluid header__container">
       <div class="d-flex justify-content-between align-items-center">
         <div class="header__logo"><img src="../public/logo.svg" alt="Logo"></div>
         <a href="#" class="header__city active">Buxoro</a>
-        <ProgressBar mode="indeterminate" style="height: 6px"></ProgressBar>
         <nav class="header__nav">
           <ul class="menu d-none d-lg-flex">
             <router-link to="/">
@@ -61,7 +112,7 @@ export default {
               <li class="menu-item">GALLERY</li>
             </router-link>
           </ul>
-          <a href="#" class="header__eng d-none d-sm-flex">English</a>
+          <a href="#" class="header__eng d-none d-sm-flex" data-bs-toggle="offcanvas" data-bs-target="#langOffcanvas" aria-controls="langOffcanvas" >English</a> 
           <a href="#" class="header__aksiya d-none d-xxl-flex">Sales</a>
           <a href="#" class="header__year d-none d-xxl-flex">1089</a>
           <a href="#" class="header__search">
@@ -72,14 +123,15 @@ export default {
           </a>
           <a href="#" class="header__shop" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop"
             aria-controls="staticBackdrop">
-            <img src="../public/shop.svg" alt="shop">
+            <img src="../public/shopping_cart.svg" alt="shop">
             <div class="badge" v-if="cardsStore.wishlist.length">
               {{ cardsStore.wishlist.length }}
             </div>
           </a>
-          <a href="#" class="header__bar" @click="pop = true">
+          <a href="#" class="header__bar" data-bs-toggle="offcanvas" data-bs-target="#menuBar" aria-controls="menuBar">
             <img src="../public/menu.svg" alt="bar">
           </a>
+          
         </nav>
 
       </div>
@@ -125,8 +177,8 @@ export default {
     </div>
     <div class="offcanvas-footer" v-if="cardsStore.payment != 0">
       <div class="d-grid">
-        <button class="btn btn-danger btn-lg offcanvas__btn" data-bs-toggle="offcanvas" href="#offcanvasExample"
-          role="button" aria-controls="offcanvasExample">
+        <button class="btn btn-danger btn-lg offcanvas__btn" data-bs-toggle="offcanvas" href="#offcanvasOrder"
+          role="button" aria-controls="offcanvasOrder">
           <span>Checkout</span>
           <span>{{ cardsStore.payment.toLocaleString() }} sum</span>
         </button>
@@ -134,69 +186,65 @@ export default {
     </div>
   </div>
 
-  <div class="offcanvas offcanvas-top booking" tabindex="-1" id="offcanvasExample"
+  <div class="offcanvas booking offcanvas-top offcanvas-top-2" tabindex="-1" id="offcanvasOrder"
     aria-labelledby="offcanvasExampleLabel">
     <div class="offcanvas-body">
       <div>
         <img src="../public/logo.svg" alt="Logo">
-        <form @submit.prevent="submitBooking">
-          <div class="mb-4">
-            <input type="text" v-model="cardsStore.username" class="form-control form-control-lg" id="exampleFormControlInput1" placeholder="Please enter name">
+        <form @submit.prevent="submitBooking" class="mt-4">
+          <div class="mb-4" v-if="showRegister">
+            <input type="text" v-model="enteredName" class="form-control form-control-lg mb-4"
+              id="exampleFormControlInput1" placeholder="Please enter name">
+            <input type="date" class="form-control form-control-lg" id="exampleFormControlInput1"
+              placeholder="Please enter name">
           </div>
           <div class="mb-4">
-            <input type="date" class="form-control form-control-lg" id="exampleFormControlInput1" placeholder="Please enter name">
+            <input type="tel" v-model="enteredNumber" class="form-control form-control-lg" id="exampleFormControlInput1"
+              placeholder="+998 91 999 99 99">
           </div>
-          <div class="mb-4">
-            <input type="tel" v-model="cardsStore.telNumber" class="form-control form-control-lg" id="exampleFormControlInput1" placeholder="+998 91 999 99 99">
+          <div class="d-grid">
+            <button class="btn text-center btn-danger btn-lg submit__btn"
+              :data-bs-dismiss="cardsStore.telNumber == enteredNumber ? 'offcanvas' : ''"
+              :aria-label="cardsStore.telNumber == enteredNumber ? Close : ''" type="submit">Submit</button>
           </div>
-            <div class="d-grid">
-              <button class="btn text-center btn-danger btn-lg submit__btn" type="submit">Submit</button>
-            </div>
-          
+          <p class="mt-3 p-0 mb-0" style="cursor: pointer;"
+            v-text="showRegister ? 'I already have an account' : 'Register'" @click="showRegister = !showRegister">
+          </p>
         </form>
       </div>
     </div>
   </div>
 
-  <div class="popup" v-if="pop">
-    <div class="popup__close">
-      <i class="fa-solid fa-xmark" @click="pop = false"></i>
+  <div class="offcanvas offcanvas-top" tabindex="-1" id="menuBar" aria-labelledby="menuBar">
+    <div class="row">
+      <div class="col-12 d-flex justify-content-end">
+        <button style="z-index: 34;" type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
     </div>
-    <div class="popup__menu">
-      <ul class="menu">
-        <router-link to="/">
-          <li class="menu-item">ABOUT US</li>
-        </router-link>
-        <router-link to="/">
-          <li class="menu-item">MENU</li>
-        </router-link>
-        <router-link to="/">
-          <li class="menu-item">SALES</li>
-        </router-link>
-        <router-link to="/">
-          <li class="menu-item">RESTAURANTS</li>
-        </router-link>
-        <router-link to="/">
-          <li class="menu-item">DELIVERY</li>
-        </router-link>
-        <router-link to="/">
-          <li class="menu-item">GALLERY</li>
-        </router-link>
-        <router-link to="/">
-          <li class="menu-item">CONTACTS</li>
-        </router-link>
-        <router-link to="/">
-          <li class="menu-item">VACANCY</li>
-        </router-link>
-        <router-link to="/">
-          <li class="menu-item">PUBLIC OFFER</li>
-        </router-link>
-        <router-link to="/">
-          <li class="menu-item">RESTAURANT VISITING RULES</li>
-        </router-link>
-      </ul>
+    <div class="offcanvas-body" style="margin-top: -30px;">
+        <router-link to="/">BIZ HAQIMIZDA</router-link>
+        <router-link to="/">MENU</router-link>
+        <router-link to="/">AKSIYALAR</router-link>
+        <router-link to="/">RESTORANLAR</router-link>
+        <router-link to="/">YETKAZIB BERISH</router-link>
+        <router-link to="/">GALEREYA</router-link>
+        <router-link to="/">ALOQA</router-link>
+        <router-link to="/">ISH O'RINLARI</router-link>
+        <router-link to="/">ALOQA</router-link>
+        <router-link to="/">RESTORANGA KELISH SHARTLARI</router-link>
     </div>
   </div>
+
+  <div class="offcanvas offcanvas-top" tabindex="-1" id="langOffcanvas" aria-labelledby="langOffcanvas">
+  <div class="offcanvas-body">
+    <h5 class="text-center py-3">Choose language</h5>
+    <ul class="lang">
+      <li class="lang__item"><img src="../public/uz.png" alt="uz"><a href="#">Uzbek</a></li>
+      <li class="lang__item"><img src="../public/eng.png" alt="eng"><a href="#">English</a></li>
+      <li class="lang__item"><img src="../public/ru.png" alt="uz"><a href="#">Uzbek</a></li>
+    </ul>
+  </div>
+</div>
 
   <RouterView />
 
@@ -265,6 +313,8 @@ export default {
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&display=swap');
+@import "@marcoschulte/vue3-progress/dist/index.css";
+
 
 * {
   margin: 0;
@@ -280,6 +330,87 @@ export default {
 .offcanvas-xl,
 .offcanvas-xxl {
   --bs-offcanvas-width: 450px;
+}
+
+#menuBar {
+  height: 100%;
+  background-image: url(../public/menu_bg.png);
+  width: 100%;
+  overflow: hidden;
+  .offcanvas-body {
+    padding: 20px;
+    z-index: 12;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    a {
+      margin-bottom: 15px;
+      text-decoration: none;
+      color: #fff;
+      font-size: 30px;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg,rgba(255,120,120,.92),rgba(220,77,77,.8188));
+  }
+  .btn-close {
+    background-image: url(../public/close.svg);
+    color: #fff;
+    background-size: 45px;
+    opacity: 0.8;
+    margin-top: 15px;
+    margin-right: 20px;
+  }
+}
+
+.lang {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  max-width: 150px;
+  margin: 0 auto;
+  img {
+    margin-right: 15px;
+    width: 35px;
+  }
+  &__item {
+    width: 100%;
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+    a {
+      font-size: 1.1rem;
+      color: #273c52;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+#langOffcanvas {
+  max-width: 350px;
+  margin: 0 auto;
+  border-radius: 5px;
+  top: 30px;
+  height: auto;
+  bottom: auto;
+}
+
+.vue3-progress-bar-container .vue3-progress-bar {
+  background-color: #e43a3a;
 }
 
 .submit {
@@ -406,13 +537,14 @@ export default {
 }
 
 .booking {
-  left: calc(50% - 250px) !important;
+  left: calc(50% - 210px) !important;
   height: auto !important;
 
   img {
     width: 200px;
     margin-bottom: 30px;
   }
+
   .form-control-lg {
     font-size: 17px;
   }
@@ -420,14 +552,14 @@ export default {
 
 .booking.offcanvas {
   bottom: auto !important;
-  max-width: 500px;
+  max-width: 420px;
   padding: 30px 20px;
   border-radius: 5px;
   text-align: center;
 }
 
-.booking.offcanvas.offcanvas-top {
-  top: 120px;
+.booking.offcanvas-top {
+  top: calc(50% - 240px);
 }
 
 
@@ -603,7 +735,7 @@ li {
 
 .header {
   position: fixed;
-  z-index: 999;
+  z-index: 9;
   background-color: #fff;
   width: 100%;
   top: 0;
@@ -874,4 +1006,5 @@ li {
   height: 17px;
   border-radius: 50px;
   color: #fff;
-}</style>
+}
+</style>

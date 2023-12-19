@@ -3,7 +3,9 @@
         <div class="box__card" v-if="groupid == product.parentGroup">
             <div class="box__image">
                 <img :src="`${product.image}`" alt="productName">
-                <h3>{{ product.name }}</h3>
+                <h3 @click="cardsStore.selectedProduct = product" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasDetails" aria-controls="offcanvasDetails">{{
+                        product.name }}</h3>
                 <p>{{ product.description_en }}</p>
                 <div class="box__info" v-if="product.price">
                     <h4>{{ product.price.toLocaleString() }}</h4>
@@ -18,6 +20,59 @@
             </div>
         </div>
     </template>
+
+    <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasDetails" aria-labelledby="offcanvasTopLabel">
+        <div class="offcanvas-body card">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-end">
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="col-lg-5">
+                    <div class="card__img">
+                        <img :src="cardsStore.selectedProduct?.image" style="width: 100%;"
+                            :alt="cardsStore.selectedProduct?.name">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="card__title">
+                        <h2>{{ cardsStore.selectedProduct?.name }}</h2>
+                    </div>
+                    <div class="card__desc">
+                        <p>{{ cardsStore.selectedProduct?.description_en }}</p>
+                    </div>
+
+                    <div class="row align-items-center" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; padding-top: 10px; padding-bottom: 10px;">
+                        <div class="col-7">
+                            <div class="card__sum">
+                                <h3> {{ cardsStore.selectedProduct?.price }} </h3>
+                            </div>
+                        </div>
+                        <div class="col-5 d-flex justify-content-end">
+                            <div class="card__btn" v-if="cardsStore.selectedProduct?.count == 0">
+                                <button class="btn btn-danger box__btn card__btn"
+                                    @click="wantBtn(cardsStore.selectedProduct)">Hoxlayman</button>
+                            </div>
+                            <div class="card__count" v-else>
+                                <div class="count">
+                                    <span class="count__minus" @click="unwantedBtn(cardsStore.selectedProduct)"><i
+                                            class="fa-solid fa-minus"></i></span>
+                                    <span class="count__num">{{ cardsStore.selectedProduct?.count }}</span>
+                                    <span class="count__plus" @click="wantBtn(cardsStore.selectedProduct)"><i
+                                            class="fa-solid fa-plus"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -28,10 +83,10 @@ import { useCardsStore } from "@/stores/card";
 export default {
     data() {
         return {
-            totalChosenCount : 0,
+            totalChosenCount: 0,
         }
     },
-    props : ["link", "groupid"],
+    props: ["link", "groupid"],
     async mounted() {
         const answer = await axios.get(`http://localhost:3000/${this.link}/`);
         this.cardsStore.products = answer.data.map(pro => {
@@ -49,28 +104,133 @@ export default {
         wantBtn(p) {
             p.count += 1
             this.cardsStore.payment += p.price
-            if (!this.cardsStore.wishlist.includes(p) ){
+            if (!this.cardsStore.wishlist.includes(p)) {
                 this.cardsStore.wishlist.push(p)
             }
-
         },
         unwantedBtn(p) {
             p.count -= 1
-            if (p.count <= 0){
+            if (p.count <= 0) {
                 this.cardsStore.wishlist = this.cardsStore.wishlist.filter(card => card.id != p.id)
             }
             this.cardsStore.payment -= p.price
         },
+        // getProduct(product) {
+        //     let cardBtn = document.querySelector(".card__btn")
+        //     let cardTitle = document.querySelector(".card__title > h2")
+        //     let cardDesc = document.querySelector(".card__desc > p")
+        //     let cardSum = document.querySelector(".card__sum > h3")
+        //     let cardImage = document.querySelector(".card__img > img")
+        //     let cardMinus = document.querySelector(".count__minus")
+        //     let cardPlus = document.querySelector(".count__plus")
+        //     let cardNum = document.querySelector(".card__num")
+
+
+
+        //     cardTitle.innerText = product.name
+        //     cardDesc.innerText = product.description_en
+        //     cardSum.innerText = product.price
+        //     cardImage.setAttribute("src", product.image)
+
+
+        //     cardMinus.onclick = () => {
+        //         this.unwantedBtn(product)
+        //         // cardNum.innerHTML = product.count
+        //     }
+        //     cardBtn.onclick = () => {
+        //         this.wantBtn(product)
+        //     }
+
+        //     cardPlus.onclick = () => {
+        //         this.wantBtn(product)
+        //         // cardNum.innerHTML = product.count
+        //     }
+        // }
     },
 }
 </script>
 
+
+
 <style lang="scss" scoped>
+.card {
+    padding: 30px;
+    &__title {
+        text-align: left;
+        line-height: 1.2;
+        box-sizing: border-box;
+        text-decoration: none;
+        background-color: transparent;
+        font-size: 18px;
+        color: #201e1e;
+        font-weight: 500;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    h3 {
+        margin: 0;
+    }
+
+    &__desc {
+        p {
+            line-height: 1.5;
+            text-align: left;
+            font-family: 'Rubik', sans-serif;
+            word-wrap: break-word;
+            box-sizing: border-box;
+            margin-top: 0;
+            margin-bottom: 1.5rem !important;
+            color: #212529;
+            font-size: 1rem;
+            font-weight: 400;
+            height: 60px;
+            overflow: hidden;
+
+        }
+    }
+}
+
+.detail {
+    &__info {
+        h4 {
+            font-size: 25px;
+        }
+    }
+    .card {
+        &__sum {
+            margin: 0;
+            padding: 0;
+        }
+    }
+    .count {
+        &__num, &__btn {
+            padding: 0;
+            margin: 0;
+        }
+    }
+}
+
+#offcanvasDetails {
+    top: 30px;
+    margin: 0 auto;
+    max-width: 90%;
+    border-radius: 5px;
+    height: auto;
+    bottom: auto;
+}
+
+@media screen and (min-width: 756px) {
+    #offcanvasDetails {
+        max-width: 75%;
+    }
+}
 
 .count {
     display: flex;
     justify-content: center;
     align-items: center;
+
     &__num {
         font-weight: 500;
         padding: 0 15px;
@@ -79,7 +239,6 @@ export default {
 }
 
 .box {
-
 
     &__btn {
         word-wrap: break-word;
@@ -195,6 +354,11 @@ export default {
             font-weight: 500;
             overflow: hidden;
             white-space: nowrap;
+
+            &:hover,
+            &:active {
+                text-decoration: underline;
+            }
         }
 
         p {

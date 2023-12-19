@@ -64,7 +64,7 @@ export default {
             groups: [],
         }
     },
-    components : {
+    components: {
         CardComp
     },
     async mounted() {
