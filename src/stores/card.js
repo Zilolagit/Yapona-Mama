@@ -8,7 +8,9 @@ export const useCardsStore = defineStore('cards', {
           payment : 0,
           username: "",
           telNumber : "",
-          selectedProduct : null
+          selectedProduct : null,
+          groups : [],
+          selectedGroup : null
         }
     },
 })

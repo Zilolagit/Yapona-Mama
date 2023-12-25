@@ -17,13 +17,13 @@ export default {
   computed: {
     ...mapStores(useCardsStore)
   },
-  mounted() {
+  async mounted() {
     let progress = this.$progress.start();
+    const response = await axios.get("http://localhost:3000/groups");
+    this.cardsStore.groups = response.data
+    progress.finish()
     this.cardsStore.username = localStorage.getItem("username") || ""
     this.cardsStore.telNumber = localStorage.getItem("telNumber") || ""
-    if (this.cardsStore.products) {
-      progress.finish()
-    }
   },
   methods: {
     increase(p) {
@@ -99,7 +99,7 @@ export default {
         <a href="#" class="header__city active">Buxoro</a>
         <nav class="header__nav">
           <ul class="menu d-none d-lg-flex">
-            <router-link to="/">
+            <router-link to="/menu">
               <li class="menu-item">MENU</li>
             </router-link>
             <router-link to="/news">
@@ -112,7 +112,8 @@ export default {
               <li class="menu-item">GALLERY</li>
             </router-link>
           </ul>
-          <a href="#" class="header__eng d-none d-sm-flex" data-bs-toggle="offcanvas" data-bs-target="#langOffcanvas" aria-controls="langOffcanvas" >English</a> 
+          <a href="#" class="header__eng d-none d-sm-flex" data-bs-toggle="offcanvas" data-bs-target="#langOffcanvas"
+            aria-controls="langOffcanvas">English</a>
           <a href="#" class="header__aksiya d-none d-xxl-flex">Sales</a>
           <a href="#" class="header__year d-none d-xxl-flex">1089</a>
           <a href="#" class="header__search">
@@ -128,10 +129,14 @@ export default {
               {{ cardsStore.wishlist.length }}
             </div>
           </a>
-          <a href="#" class="header__bar" data-bs-toggle="offcanvas" data-bs-target="#menuBar" aria-controls="menuBar">
+          <a href="#" class="header__bar d-none d-sm-block" data-bs-toggle="offcanvas" data-bs-target="#menuBar" aria-controls="menuBar">
             <img src="../public/menu.svg" alt="bar">
           </a>
-          
+          <a href="#" class="header__bar d-sm-none" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu"
+            aria-controls="mobileMenu">
+            <img src="../public/menu.svg" alt="bar">
+          </a>
+
         </nav>
 
       </div>
@@ -139,6 +144,37 @@ export default {
     </div>
   </header>
 
+
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenu">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Yaponamama</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="mobile__menu">
+        <router-link to="/">BIZ HAQIMIZDA</router-link>
+        <router-link to="/">MENU</router-link>
+        <router-link to="/">AKSIYALAR</router-link>
+        <router-link to="/">RESTORANLAR</router-link>
+        <router-link to="/">YETKAZIB BERISH</router-link>
+        <router-link to="/">GALEREYA</router-link>
+        <router-link to="/">ALOQA</router-link>
+        <router-link to="/">ISH O'RINLARI</router-link>
+        <router-link to="/">ALOQA</router-link>
+        <router-link to="/">RESTORANGA KELISH SHARTLARI</router-link>
+      </div>
+      <div class="row my-3">
+        <template v-for="group in cardsStore.groups" :key="`${group.name}`">            
+          <div  class="col-6 d-flex justify-content-center text-center" v-if="group.name_uz != 'Yangiliklar'" >
+            <a class="mini__card" style="color: #201e1e; font-size: 16px;" :href="`#${group.id}`">
+              <img :src='`https://cdn.yaponamama.uz/products/thumbs/${group.list_image}`' alt="miniImage">
+              <p>{{ group.name.split(" ")[0] }}</p>
+            </a>
+          </div>
+        </template>
+      </div>
+    </div>
+  </div>
 
   <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop"
     aria-labelledby="staticBackdropLabel">
@@ -150,11 +186,11 @@ export default {
       <div class="wish" v-for="wishProduct in cardsStore.wishlist">
         <div class="row">
           <div class="col-4">
-            <img :src="wishProduct.image" :alt="wishProduct.name">
+            <img :src="`https://cdn.yaponamama.uz/products/thumbs/${wishProduct.image}`" :alt="wishProduct.name">
           </div>
           <div class="col-8">
             <h2>{{ wishProduct.name }}</h2>
-            <p>{{ wishProduct.description_en }}</p>
+            <p>{{ wishProduct.description }}</p>
             <div class="row">
               <div class="col-4">
                 <h3>{{ wishProduct.price.toLocaleString() }}</h3>
@@ -205,7 +241,7 @@ export default {
           <div class="d-grid">
             <button class="btn text-center btn-danger btn-lg submit__btn"
               :data-bs-dismiss="cardsStore.telNumber == enteredNumber ? 'offcanvas' : ''"
-              :aria-label="cardsStore.telNumber == enteredNumber ? Close : ''" type="submit">Submit</button>
+              :aria-label="cardsStore.telNumber == enteredNumber ? 'Close' : ''" type="submit">Submit</button>
           </div>
           <p class="mt-3 p-0 mb-0" style="cursor: pointer;"
             v-text="showRegister ? 'I already have an account' : 'Register'" @click="showRegister = !showRegister">
@@ -218,33 +254,34 @@ export default {
   <div class="offcanvas offcanvas-top" tabindex="-1" id="menuBar" aria-labelledby="menuBar">
     <div class="row">
       <div class="col-12 d-flex justify-content-end">
-        <button style="z-index: 34;" type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <button style="z-index: 34;" type="button" class="btn-close" data-bs-dismiss="offcanvas"
+          aria-label="Close"></button>
       </div>
     </div>
     <div class="offcanvas-body" style="margin-top: -30px;">
-        <router-link to="/">BIZ HAQIMIZDA</router-link>
-        <router-link to="/">MENU</router-link>
-        <router-link to="/">AKSIYALAR</router-link>
-        <router-link to="/">RESTORANLAR</router-link>
-        <router-link to="/">YETKAZIB BERISH</router-link>
-        <router-link to="/">GALEREYA</router-link>
-        <router-link to="/">ALOQA</router-link>
-        <router-link to="/">ISH O'RINLARI</router-link>
-        <router-link to="/">ALOQA</router-link>
-        <router-link to="/">RESTORANGA KELISH SHARTLARI</router-link>
+      <router-link to="/">BIZ HAQIMIZDA</router-link>
+      <router-link to="/">MENU</router-link>
+      <router-link to="/">AKSIYALAR</router-link>
+      <router-link to="/">RESTORANLAR</router-link>
+      <router-link to="/">YETKAZIB BERISH</router-link>
+      <router-link to="/">GALEREYA</router-link>
+      <router-link to="/">ALOQA</router-link>
+      <router-link to="/">ISH O'RINLARI</router-link>
+      <router-link to="/">ALOQA</router-link>
+      <router-link to="/">RESTORANGA KELISH SHARTLARI</router-link>
     </div>
   </div>
 
   <div class="offcanvas offcanvas-top" tabindex="-1" id="langOffcanvas" aria-labelledby="langOffcanvas">
-  <div class="offcanvas-body">
-    <h5 class="text-center py-3">Choose language</h5>
-    <ul class="lang">
-      <li class="lang__item"><img src="../public/uz.png" alt="uz"><a href="#">Uzbek</a></li>
-      <li class="lang__item"><img src="../public/eng.png" alt="eng"><a href="#">English</a></li>
-      <li class="lang__item"><img src="../public/ru.png" alt="uz"><a href="#">Uzbek</a></li>
-    </ul>
+    <div class="offcanvas-body">
+      <h5 class="text-center py-3">Choose language</h5>
+      <ul class="lang">
+        <li class="lang__item"><img src="../public/uz.png" alt="uz"><a href="#">Uzbek</a></li>
+        <li class="lang__item"><img src="../public/eng.png" alt="eng"><a href="#">English</a></li>
+        <li class="lang__item"><img src="../public/ru.png" alt="uz"><a href="#">Uzbek</a></li>
+      </ul>
+    </div>
   </div>
-</div>
 
   <RouterView />
 
@@ -291,12 +328,12 @@ export default {
     <div class="footer__bottom">
       <div class="container-fluid header__container">
         <div class="row">
-          <div class="col-12 col-lg-6 d-flex align-items-center">
-            <div class="footer__title">
+          <div class="col-12 col-lg-6 d-flex align-items-center justify-content-center  justify-content-lg-start">
+            <div class="footer__title text-center text-lg-start ">
               <p>© 2023 Yaponamama. Barcha huquqlar ximoyalangan.</p>
             </div>
           </div>
-          <div class="col-12 col-lg-6 d-flex justify-content-center justify-content-sm-end  align-items-center">
+          <div class="col-12 col-lg-6 mt-4 mt-lg-0 d-flex footer__past text-center text-lg-end justify-content-center justify-content-lg-end  align-items-center">
             <h6>MOBIL ILOVANI KO'CHIRISH</h6>
             <a href="#">
               <img src="../public/googleplay.svg" alt="google">
@@ -337,6 +374,7 @@ export default {
   background-image: url(../public/menu_bg.png);
   width: 100%;
   overflow: hidden;
+
   .offcanvas-body {
     padding: 20px;
     z-index: 12;
@@ -344,11 +382,13 @@ export default {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
     a {
       margin-bottom: 15px;
       text-decoration: none;
       color: #fff;
       font-size: 30px;
+
       &:hover {
         text-decoration: underline;
       }
@@ -362,8 +402,9 @@ export default {
     content: "";
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg,rgba(255,120,120,.92),rgba(220,77,77,.8188));
+    background: linear-gradient(180deg, rgba(255, 120, 120, .92), rgba(220, 77, 77, .8188));
   }
+
   .btn-close {
     background-image: url(../public/close.svg);
     color: #fff;
@@ -374,6 +415,22 @@ export default {
   }
 }
 
+.mobile {
+  &__menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: 1px solid #e9ecef;
+
+    a {
+      color: #201e1e;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+  }
+}
+
 .lang {
   display: flex;
   justify-content: space-between;
@@ -381,18 +438,22 @@ export default {
   flex-direction: column;
   max-width: 150px;
   margin: 0 auto;
+
   img {
     margin-right: 15px;
     width: 35px;
   }
+
   &__item {
     width: 100%;
     display: flex;
     margin-bottom: 20px;
     align-items: center;
+
     a {
       font-size: 1.1rem;
       color: #273c52;
+
       &:hover {
         text-decoration: underline;
       }
@@ -680,6 +741,15 @@ li {
     }
   }
 
+  &__past {
+    flex-direction: row;
+    @media screen and (max-width: 576px) {
+      flex-direction:column;
+      img {
+        margin-top: 20px;
+      }
+    }
+  }
 
   &__tel {
     margin: 0;

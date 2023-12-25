@@ -1,12 +1,13 @@
 <template>
     <template v-for="product in cardsStore.products" :key="product.name">
+                
         <div class="box__card" v-if="groupid == product.parentGroup">
             <div class="box__image">
-                <img :src="`${product.image}`" alt="productName">
-                <h3 @click="cardsStore.selectedProduct = product" data-bs-toggle="offcanvas"
+                <img :src="`https://cdn.yaponamama.uz/products/thumbs/${product.image}`" :alt="product.name">
+                <h3 class="pt-4" @click="cardsStore.selectedProduct = product" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasDetails" aria-controls="offcanvasDetails">{{
                         product.name }}</h3>
-                <p>{{ product.description_en }}</p>
+                <p>{{ product.description }}</p>
                 <div class="box__info" v-if="product.price">
                     <h4>{{ product.price.toLocaleString() }}</h4>
                     <button class="btn btn-danger box__btn" v-if="product.count == 0"
@@ -29,7 +30,7 @@
                 </div>
                 <div class="col-lg-5">
                     <div class="card__img">
-                        <img :src="cardsStore.selectedProduct?.image" style="width: 100%;"
+                        <img :src="`https://cdn.yaponamama.uz/products/thumbs/${cardsStore.selectedProduct?.image}`" style="width: 100%;"
                             :alt="cardsStore.selectedProduct?.name">
                     </div>
                 </div>
@@ -38,7 +39,7 @@
                         <h2>{{ cardsStore.selectedProduct?.name }}</h2>
                     </div>
                     <div class="card__desc">
-                        <p>{{ cardsStore.selectedProduct?.description_en }}</p>
+                        <p>{{ cardsStore.selectedProduct?.description }}</p>
                     </div>
 
                     <div class="row align-items-center" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; padding-top: 10px; padding-bottom: 10px;">
@@ -80,21 +81,24 @@ import axios from "axios"
 import { mapStores } from "pinia";
 import { useCardsStore } from "@/stores/card";
 
+
 export default {
     data() {
         return {
             totalChosenCount: 0,
         }
     },
-    props: ["link", "groupid"],
+    props: ["groupid"],
     async mounted() {
-        const answer = await axios.get(`http://localhost:3000/${this.link}/`);
+        let progress = this.$progress.start();
+        const answer = await axios.get(`http://localhost:3000/products/`);
         this.cardsStore.products = answer.data.map(pro => {
             return {
                 ...pro,
                 count: 0,
             }
         })
+        progress.finish()
 
     },
     computed: {
@@ -164,7 +168,6 @@ export default {
         font-size: 18px;
         color: #201e1e;
         font-weight: 500;
-        overflow: hidden;
         white-space: nowrap;
     }
 
@@ -184,8 +187,6 @@ export default {
             color: #212529;
             font-size: 1rem;
             font-weight: 400;
-            height: 60px;
-            overflow: hidden;
 
         }
     }
@@ -239,6 +240,11 @@ export default {
 }
 
 .box {
+    &__image {
+        img {
+            width: 100%;
+        }
+    }
 
     &__btn {
         word-wrap: break-word;
@@ -397,6 +403,7 @@ export default {
     .box {
         &__card {
             width: 100%;
+            margin-bottom: 25px;
         }
     }
 

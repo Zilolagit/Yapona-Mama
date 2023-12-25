@@ -30,22 +30,25 @@
         <div class="mini d-none d-lg-block">
             <div class="container-fluid header__container">
                 <div class="mini__flex ">
-                    <template v-for="group in groups" :key="`${group.name}`">
+                    <template v-for="group in cardsStore.groups" :key="`${group.name}`">
 
-                        <a class="mini__card" v-if="group.name_uz != 'Yangiliklar'" :href="`#${group.id}`">
-                            <img :src='`${group.list_image}`' alt="miniImage">
-                            <p>{{ group.name_uz.split(" ")[0] }}</p>
+                        <a class="mini__card" :href="`#${group.id}`">
+                            <img :src='`https://cdn.yaponamama.uz/products/thumbs/${group.list_image}`' alt="miniImage">
+                            <p>{{ group.name.split(" ")[0] }}</p>
                         </a>
                     </template>
                 </div>
             </div>
         </div>
-        <template v-for="gr in groups" :key="`${gr.name}`">
+        <template v-for="gr in cardsStore.groups" :key="`${gr.name}`">
             <div class="full" v-if="gr.name_uz != 'Yangiliklar'" :id="`${gr.id}`">
                 <div class="container header__container">
-                    <h3 class="full__name">{{ gr.name_uz }}</h3>
+                    <h3 class="full__name">{{ gr.name }}</h3>
                     <div class="box__flex">
-                        <CardComp link="products" :groupid="`${gr.id}`" />
+                        <CardComp :groupid="gr.id" />
+                        <template v-for="child in gr?.child">
+                        <CardComp :groupid="child.id" />
+                        </template>
                     </div>
                 </div>
             </div>
@@ -55,22 +58,16 @@
 </template>
 
 <script>
-import axios from "axios"
 import CardComp from "../components/CardComp.vue";
+import { mapStores } from "pinia";
+import { useCardsStore } from "@/stores/card";
 
 export default {
-    data() {
-        return {
-            groups: [],
-        }
-    },
     components: {
         CardComp
     },
-    async mounted() {
-        const response = await axios.get("http://localhost:3000/groups");
-        this.groups = response.data
-
+    computed: {
+        ...mapStores(useCardsStore),
     },
 }
 </script>
@@ -100,7 +97,6 @@ export default {
 .box {
     &__flex {
         display: flex;
-        align-items: center;
         flex-wrap: wrap;
         width: 100%;
     }
@@ -123,7 +119,7 @@ export default {
         cursor: pointer;
 
         img {
-            padding: 0 20px;
+            padding: 0 13px;
         }
 
         p {
@@ -163,7 +159,7 @@ export default {
         &__card {
             width: 100%;
         }
-    }
+    }       
 
     .full {
         &__name {
@@ -171,4 +167,6 @@ export default {
             margin-bottom: 30px;
         }
     }
-}</style>
+}
+
+</style>
