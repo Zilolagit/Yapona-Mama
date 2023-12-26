@@ -64,12 +64,6 @@
                             </div>
                         </div>
                     </div>
-
-
-
-
-
-
                 </div>
             </div>
         </div>
@@ -255,13 +249,12 @@ export default {
         text-align: center;
         vertical-align: middle;
         user-select: none;
-        border: 1px solid transparent;
+        border: 1px solid #e43a3a;
         padding: .375rem .75rem;
         font-size: 1rem;
         line-height: 1.5;
         transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
         background: #e43a3a;
-        border-color: #e43a3a;
         border-radius: 3px;
         color: #fff;
         padding-left: 2rem;
@@ -276,7 +269,7 @@ export default {
             text-align: center;
             vertical-align: middle;
             user-select: none;
-            border: 1px solid transparent;
+            border: 1px solid #bd2130;
             padding: .375rem .75rem;
             font-size: 1rem;
             line-height: 1.5;
@@ -288,7 +281,6 @@ export default {
             text-decoration: none;
             color: #fff;
             background-color: #c82333;
-            border-color: #bd2130;
             cursor: pointer;
         }
 

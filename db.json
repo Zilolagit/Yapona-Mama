@@ -3013,5 +3013,121 @@
             "image": "199_1697163280.png",
             "price": 19000
         }
+    ],
+    "posts": [
+        {
+            "title" : "Ezgulikka xissa qo'shib!",
+            "desc" : "Aziz do'stlar, xayriya tashabbusimizni qo'llab-quvvatlaganingiz va saxiyligingiz uchun har biringizga samimiy minnatdorchiligimizni bildirmoqchimiz. Sizning hissangiz yordamga muhtoj odamlarning hayotida ijobiy o'zgarishlarga olib keladi. Sizning g'amxo'rligingiz, mehribonligingiz va hamjihatligingiz uchun tashakkur. Birgalikda biz dunyoni yaxshilikka o'zgartiramiz!",
+            "image" : "1688378895.jpg"
+        },
+        {
+            "title" : "Samarqandda yangi filial ochilishi!",
+            "desc" : "Yaponamama Samarqand'ning yangi filiali Rudakiy ko'chasi, 78 manzili bo'yicha, temir yo'l bozori yaqinida joylashgan. Tantanali ochilish marosimida go‘zal tarixiy shaharning yuzlab aholisi ishtirok etib, sovrinlar o‘yini, rollarning bepul tarqatilishi va qizg‘in shou dasturidan to‘liq bahramand bo‘lishdi. Shuningdek, ochilish sharafiga iPhone, AirPods Max va AppleWatch o‘yini ham boshlandi, unda Samarqandning har bir yashovchisi va mehmoni ishtirok etishi mumkin! Joriy o'yin haqida batafsil ma'lumotni havola orqali topishingiz mumkin. Va tez orada tadbirdan yorqin reportaj kuting!",
+            "image" : "1689769507.jpg"
+        },
+        {
+            "title" : "Открытие Yaponamama в Фергане!",
+            "desc" : "Жители долины могут насладиться паназиатской кухней ежедневно с 11:00 до 23:00, а также оформить доставку на сайте или по единому региональному номеру 78-147-89-89 ",
+            "image" : "1699350525.jpg"
+        },
+        {
+            "title" : "Открытие нового филиала на Сайраме!",
+            "desc" : "Гости мероприятия смогли поучаствовать в розыгрышах призов и развлекательной программе вечера, а после - сполна насладились вкуснейшими роллами на бесплатной дегустации, которая уже стала традицией при открытии новых филиалов!",
+            "image" : "1699881901.png"
+        }
+
+    ],
+    "restaraunts" : [
+        {
+            "id" : 1,
+            "name" : "YAPONAMAMA SHOTA",
+            "address" : "Yakkasaray district, Shota Rustaveli street, 69A",
+            "phone_numbers" : [
+                "+998712531213",
+                "+998982511213",
+                "+998982511213"
+            ],
+            "work" : "10:00 - 22:00",
+            "images" : ["9_1558698726.jpg", "80_1610953862.jpg"],
+            "desc" : "Yaponamama birinchi restorani 2015 yil 5-dekabrda ochilgan. Bizning tariximiz aynan shu joydan boshlangan.  Bizning restoranimiz taomlari Pan-Osiyo oshxonasi an'analarini muvaffaqiyatli birlashtirdi. Restoran zali sharqona uslubda bezatilgan. Mehmonlar shinam, och qizil divanlarda dam olishlari mumkin. Devorlar yaponcha uslubdagi rasmlar bilan bezatilgan. Restoranda chekilmaydi, bolalar uchun stullar mavjud. Oilaviy va do'stona uchrashuvlar, ishbilarmonlik muzokaralari uchun yoqimli joy.",
+            "seats" : 44,
+            "parking" : true,
+            "location" : "Sobiq to'qimachilik halqasi, Fregat kafesi ro'parasi",
+            "yandex" : "https://yandex.uz/profile/216745885173?no-distribution=1&source=wizbiz_new_map_single",
+            "google" : "https://www.google.com.ng/maps/place/%D0%AF%D0%BF%D0%BE%D0%BD%D0%B0%D0%BC%D0%B0%D0%BC%D0%B0+%D0%A8%D0%BE%D1%82%D0%B0/@41.2736755,69.2389188,17z/data=!3m1!4b1!4m5!3m4!1s0x38ae8a89cfac6c2f:0xe4fa5b1f864e9ee8!8m2!3d41.2736755!4d69.2411075",
+            "gis" : "https://2gis.uz/tashkent/branches/70000001037295460/firm/70000001036947496/69.241226%2C41.2738"
+        },
+        {
+            "id" : 2,
+            "name" : "YAPONAMAMA BODOMZOR",
+            "address" : "Yunusabad district, Chingiz Aytmatov street, 1",
+            "phone_numbers" : [
+                "+998781501213",
+                "+998982601213"
+            ],
+            "work" : "12:00 - 23:00",
+            "images" : ["1_1544527438.jpg", "1_1544527438.jpg"],
+            "desc" : "Yaponamama birinchi restorani 2015 yil 5-dekabrda ochilgan. Bizning tariximiz aynan shu joydan boshlangan.  Bizning restoranimiz taomlari Pan-Osiyo oshxonasi an'analarini muvaffaqiyatli birlashtirdi. Restoran zali sharqona uslubda bezatilgan. Mehmonlar shinam, och qizil divanlarda dam olishlari mumkin. Devorlar yaponcha uslubdagi rasmlar bilan bezatilgan. Restoranda chekilmaydi, bolalar uchun stullar mavjud. Oilaviy va do'stona uchrashuvlar, ishbilarmonlik muzokaralari uchun yoqimli joy.",
+            "seats" : 62,
+            "parking" : true,
+            "location" : "Bodomzor masjidi ro'parasi",
+            "yandex" : "https://yandex.uz/profile/216745885173?no-distribution=1&source=wizbiz_new_map_single",
+            "google" : "https://www.google.com.ng/maps/place/%D0%AF%D0%BF%D0%BE%D0%BD%D0%B0%D0%BC%D0%B0%D0%BC%D0%B0+%D0%A8%D0%BE%D1%82%D0%B0/@41.2736755,69.2389188,17z/data=!3m1!4b1!4m5!3m4!1s0x38ae8a89cfac6c2f:0xe4fa5b1f864e9ee8!8m2!3d41.2736755!4d69.2411075",
+            "gis" : "https://2gis.uz/tashkent/branches/70000001037295460/firm/70000001036947496/69.241226%2C41.2738"
+        },
+        {
+            "id" : 3,
+            "name" : "YAPONAMAMA SHEVCHENKO",
+            "address" : "Mirabad district, Fidokor street, 12",
+            "phone_numbers" : [
+                "+998983666112"
+            ],
+            "work" : "12:00 - 23:00",
+            "images" : ["1_1544527438.jpg", "1_1544527438.jpg"],
+            "desc" : "Yaponamama birinchi restorani 2015 yil 5-dekabrda ochilgan. Bizning tariximiz aynan shu joydan boshlangan.  Bizning restoranimiz taomlari Pan-Osiyo oshxonasi an'analarini muvaffaqiyatli birlashtirdi. Restoran zali sharqona uslubda bezatilgan. Mehmonlar shinam, och qizil divanlarda dam olishlari mumkin. Devorlar yaponcha uslubdagi rasmlar bilan bezatilgan. Restoranda chekilmaydi, bolalar uchun stullar mavjud. Oilaviy va do'stona uchrashuvlar, ishbilarmonlik muzokaralari uchun yoqimli joy.",
+            "seats" : 62,
+            "parking" : true,
+            "location" : "Bodomzor masjidi ro'parasi",
+            "yandex" : "https://yandex.uz/profile/216745885173?no-distribution=1&source=wizbiz_new_map_single",
+            "google" : "https://www.google.com.ng/maps/place/%D0%AF%D0%BF%D0%BE%D0%BD%D0%B0%D0%BC%D0%B0%D0%BC%D0%B0+%D0%A8%D0%BE%D1%82%D0%B0/@41.2736755,69.2389188,17z/data=!3m1!4b1!4m5!3m4!1s0x38ae8a89cfac6c2f:0xe4fa5b1f864e9ee8!8m2!3d41.2736755!4d69.2411075",
+            "gis" : "https://2gis.uz/tashkent/branches/70000001037295460/firm/70000001036947496/69.241226%2C41.2738"
+        },
+        {
+            "id" : 4,
+            "name" : "YAPONAMAMA BUKHARA",
+            "address" : "Bukhara, Alisher Navoiy avenue, 16",
+            "phone_numbers" : [
+                "+998993701213",
+                "+998991601213",
+                "+998781478989"
+            ],
+            "work" : "12:00 - 23:00",
+            "desc" : "Yaponamama birinchi restorani 2015 yil 5-dekabrda ochilgan. Bizning tariximiz aynan shu joydan boshlangan.  Bizning restoranimiz taomlari Pan-Osiyo oshxonasi an'analarini muvaffaqiyatli birlashtirdi. Restoran zali sharqona uslubda bezatilgan. Mehmonlar shinam, och qizil divanlarda dam olishlari mumkin. Devorlar yaponcha uslubdagi rasmlar bilan bezatilgan. Restoranda chekilmaydi, bolalar uchun stullar mavjud. Oilaviy va do'stona uchrashuvlar, ishbilarmonlik muzokaralari uchun yoqimli joy.",
+            "seats" : 62,
+            "parking" : false,
+            "location" : "Bodomzor masjidi ro'parasi",
+            "yandex" : "https://yandex.uz/profile/216745885173?no-distribution=1&source=wizbiz_new_map_single",
+            "google" : "https://www.google.com.ng/maps/place/%D0%AF%D0%BF%D0%BE%D0%BD%D0%B0%D0%BC%D0%B0%D0%BC%D0%B0+%D0%A8%D0%BE%D1%82%D0%B0/@41.2736755,69.2389188,17z/data=!3m1!4b1!4m5!3m4!1s0x38ae8a89cfac6c2f:0xe4fa5b1f864e9ee8!8m2!3d41.2736755!4d69.2411075",
+            "gis" : "https://2gis.uz/tashkent/branches/70000001037295460/firm/70000001036947496/69.241226%2C41.2738"
+        },
+        {
+            "id" : 5,
+            "name" : "YAPONAMAMA ФЕРГАНА",
+            "address" : "г. Фергана, ул. Марифат, 16",
+            "phone_numbers" : [
+                "+99898-877-12-13",
+                "+99898-788-12-13",
+                "+99878-888-12-13"
+            ],
+            "work" : "11:00 - 23:00",
+            "images" : ["1_1544527438.jpg", "1_1544527438.jpg"],
+            "desc" : "Yaponamama birinchi restorani 2015 yil 5-dekabrda ochilgan. Bizning tariximiz aynan shu joydan boshlangan.  Bizning restoranimiz taomlari Pan-Osiyo oshxonasi an'analarini muvaffaqiyatli birlashtirdi. Restoran zali sharqona uslubda bezatilgan. Mehmonlar shinam, och qizil divanlarda dam olishlari mumkin. Devorlar yaponcha uslubdagi rasmlar bilan bezatilgan. Restoranda chekilmaydi, bolalar uchun stullar mavjud. Oilaviy va do'stona uchrashuvlar, ishbilarmonlik muzokaralari uchun yoqimli joy.",
+            "seats" : 45,
+            "parking" : false,
+            "location" : "Bodomzor masjidi ro'parasi",
+            "yandex" : "https://yandex.uz/profile/216745885173?no-distribution=1&source=wizbiz_new_map_single",
+            "google" : "https://www.google.com.ng/maps/place/%D0%AF%D0%BF%D0%BE%D0%BD%D0%B0%D0%BC%D0%B0%D0%BC%D0%B0+%D0%A8%D0%BE%D1%82%D0%B0/@41.2736755,69.2389188,17z/data=!3m1!4b1!4m5!3m4!1s0x38ae8a89cfac6c2f:0xe4fa5b1f864e9ee8!8m2!3d41.2736755!4d69.2411075",
+            "gis" : "https://2gis.uz/tashkent/branches/70000001037295460/firm/70000001036947496/69.241226%2C41.2738"
+        }
     ]
 }

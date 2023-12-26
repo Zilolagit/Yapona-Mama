@@ -12,13 +12,18 @@ const router = createRouter({
     },
     {
       path: '/news',
-      name: 'news',
+      name: 'News',
       component: () => import('@/views/NewsView.vue')
     },
     {
-      path: '/restraunts',
-      name: 'restraunts',
-      component: () => import('@/views/RestrauntsView.vue')
+      path: '/restaurants',
+      name: 'restaurants',
+      component: () => import('@/views/RestaurantsView.vue')
+    },
+    {
+      path: '/restaurants/:id',
+      name: 'About Restaurant',
+      component: () => import('@/views/RestaurantDetails.vue')
     },
     {
       path: '/gallery',

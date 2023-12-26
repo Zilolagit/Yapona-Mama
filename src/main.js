@@ -11,5 +11,4 @@ const app = createApp(App)
 app.use(createPinia())
 app.use(router)
 app.use(Vue3ProgressPlugin)
-
 app.mount('#app')

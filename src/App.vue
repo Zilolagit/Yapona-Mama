@@ -12,6 +12,7 @@ export default {
       showRegister: false,
       enteredNumber: "",
       enteredName: "",
+      selectedOption : null
     }
   },
   computed: {
@@ -51,7 +52,6 @@ export default {
         counter++
       }
       let response = await axios.get(`https://api.telegram.org/bot6715697333:AAEmAxIpoi8Wyb2C0ObJpZOOtLXkOVQGI3Q/sendMessage?chat_id=237282713&text=Date: ${current} ${time}%0AUsername: ${this.cardsStore.username}%0ATelephone Number: ${this.cardsStore.telNumber}%0A%0ABookings:%0A${text}%0A%0ATotal Payment: ${this.cardsStore.payment.toLocaleString()} so'm`)
-      console.log(response);
     },
     submitBooking() {
       if (this.showRegister) {
@@ -84,7 +84,7 @@ export default {
           });
         }
       }
-    }
+    },
   },
 }
 
@@ -105,7 +105,7 @@ export default {
             <router-link to="/news">
               <li class="menu-item">NEWS</li>
             </router-link>
-            <router-link to="/restraunts">
+            <router-link to="/restaurants">
               <li class="menu-item">RESTAURANTS</li>
             </router-link>
             <router-link to="/gallery">
@@ -140,7 +140,6 @@ export default {
         </nav>
 
       </div>
-
     </div>
   </header>
 
@@ -153,11 +152,11 @@ export default {
     <div class="offcanvas-body">
       <div class="mobile__menu">
         <router-link to="/">BIZ HAQIMIZDA</router-link>
-        <router-link to="/">MENU</router-link>
+        <router-link to="/menu">MENU</router-link>
         <router-link to="/">AKSIYALAR</router-link>
-        <router-link to="/">RESTORANLAR</router-link>
+        <router-link to="/restaurants">RESTORANLAR</router-link>
         <router-link to="/">YETKAZIB BERISH</router-link>
-        <router-link to="/">GALEREYA</router-link>
+        <router-link to="/gallery">GALEREYA</router-link>
         <router-link to="/">ALOQA</router-link>
         <router-link to="/">ISH O'RINLARI</router-link>
         <router-link to="/">ALOQA</router-link>
@@ -165,7 +164,7 @@ export default {
       </div>
       <div class="row my-3">
         <template v-for="group in cardsStore.groups" :key="`${group.name}`">            
-          <div  class="col-6 d-flex justify-content-center text-center" v-if="group.name_uz != 'Yangiliklar'" >
+          <div  class="col-6 d-flex justify-content-center text-center" >
             <a class="mini__card" style="color: #201e1e; font-size: 16px;" :href="`#${group.id}`">
               <img :src='`https://cdn.yaponamama.uz/products/thumbs/${group.list_image}`' alt="miniImage">
               <p>{{ group.name.split(" ")[0] }}</p>
@@ -259,16 +258,15 @@ export default {
       </div>
     </div>
     <div class="offcanvas-body" style="margin-top: -30px;">
-      <router-link to="/">BIZ HAQIMIZDA</router-link>
-      <router-link to="/">MENU</router-link>
-      <router-link to="/">AKSIYALAR</router-link>
-      <router-link to="/">RESTORANLAR</router-link>
-      <router-link to="/">YETKAZIB BERISH</router-link>
-      <router-link to="/">GALEREYA</router-link>
-      <router-link to="/">ALOQA</router-link>
-      <router-link to="/">ISH O'RINLARI</router-link>
-      <router-link to="/">ALOQA</router-link>
-      <router-link to="/">RESTORANGA KELISH SHARTLARI</router-link>
+      <router-link to="/" >BIZ HAQIMIZDA</router-link>
+      <router-link to="/menu" >MENU</router-link>
+      <router-link to="/" >AKSIYALAR</router-link>
+      <router-link to="/restaurants" >RESTORANLAR</router-link>
+      <router-link to="/" >YETKAZIB BERISH</router-link>
+      <router-link to="/gallery" >GALEREYA</router-link>
+      <router-link to="/" >ALOQA</router-link>
+      <router-link to="/" >ISH O'RINLARI</router-link>
+      <router-link to="/" >RESTORANGA KELISH SHARTLARI</router-link>
     </div>
   </div>
 
@@ -351,7 +349,6 @@ export default {
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&display=swap');
 @import "@marcoschulte/vue3-progress/dist/index.css";
-
 
 * {
   margin: 0;
@@ -722,6 +719,8 @@ li {
 }
 
 .footer {
+  z-index: 45;
+  background-color: #fff;
   img {
     height: 60px;
   }
@@ -1044,8 +1043,8 @@ li {
   .menu {
     &-item {
       margin-bottom: 18px;
-      letter-spacing: 0.5;
-      transition: 0.3 all .3s;
+      letter-spacing: 0.5px;
+      transition: all .3s ease-in-out;
       cursor: pointer;
       color: #fff;
 

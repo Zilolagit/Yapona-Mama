@@ -10,7 +10,8 @@ export const useCardsStore = defineStore('cards', {
           telNumber : "",
           selectedProduct : null,
           groups : [],
-          selectedGroup : null
+          selectedGroup : null,
+          selectedPost : null
         }
     },
 })
