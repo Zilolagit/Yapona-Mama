@@ -3,8 +3,12 @@
         <div class="container header__container">
             <BreadCrumb />
             <div class="row gallery mt-5">
-                <div class="col-12 col-md-6 col-lg-4" v-for="gallery in galleryList">
-                    <GalleryList :title="gallery.title" :image="gallery.image" />
+                <div class="col-12 col-md-6 col-lg-4" v-for="gallery in galleryList" :key="gallery.id">
+                    <GalleryList 
+                    :title="gallery.title" 
+                    :image="gallery.image"
+                    :link="`gallery/${gallery.id}`"
+                    />
                 </div>
             </div>
         </div>

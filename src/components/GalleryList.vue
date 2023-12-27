@@ -1,19 +1,25 @@
 <template>
-    <div class="gallery__item" :style="{'background-image' : `url(https://cdn.yaponamama.uz/gallery/${image})`}">
-        <router-link to="/">
-            {{ title }}
-        </router-link>
-    </div>
+        <div class="gallery__item" :style="{'background-image' : `url(https://cdn.yaponamama.uz/gallery/${image})`}">
+            <router-link :to="`${link}`">{{ title }}</router-link>
+            
+        </div>
 </template>
 
 <script>
     export default {
-      props : ["title", "image"]
+      props : ["title", "image", "link"]
     }
 </script>
 
 <style lang="scss" scoped>
     .gallery {
+        a {
+            color: #fff;
+            text-transform: capitalize;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
         &__item {
             width: 100%;
             min-height: 240px;
