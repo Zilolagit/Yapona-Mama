@@ -409,6 +409,12 @@ export default {
   }
 }
 
+@media screen and (max-width: 576px) {
+    #searchOffcanvas {
+      max-width: 330px;
+    }
+}
+
 #menuBar {
   height: 100%;
   background-image: url(../public/menu_bg.png);

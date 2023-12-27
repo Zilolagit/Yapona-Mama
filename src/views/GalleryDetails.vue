@@ -53,10 +53,6 @@ export default {
 .carousel {
     &-item {
         width: 100%;
-        // img {
-        //     object-fit: cover;
-        //     object-position: center;
-        // }
     }
 }
 
