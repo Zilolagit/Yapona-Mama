@@ -1,15 +1,45 @@
 <template>
     <div>
-        <p>Gallery</p>
+        <div class="container header__container">
+            <BreadCrumb />
+            <div class="row gallery mt-5">
+                <div class="col-12 col-md-6 col-lg-4" v-for="gallery in galleryList">
+                    <GalleryList :title="gallery.title" :image="gallery.image" />
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
-    export default {
-        
+import axios from "axios"
+import BreadCrumb from "../components/BreadCrumb.vue"
+import GalleryList from "../components/GalleryList.vue"
+export default {
+    data() {
+        return {
+            galleryList : []
+        }
+    },
+    async mounted() {
+        let progress = this.$progress.start();
+        const response = await axios.get("http://localhost:3000/gallery/")
+        this.galleryList = response.data
+        progress.finish()
+    },
+    components: {
+        BreadCrumb,
+        GalleryList
     }
+}
 </script>
 
 <style lang="scss" scoped>
-
+.gallery {
+    &__col {
+        .gallery__item {
+            margin-bottom: 0;
+        }
+    }
+}
 </style>

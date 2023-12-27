@@ -3129,5 +3129,31 @@
             "google" : "https://www.google.com.ng/maps/place/%D0%AF%D0%BF%D0%BE%D0%BD%D0%B0%D0%BC%D0%B0%D0%BC%D0%B0+%D0%A8%D0%BE%D1%82%D0%B0/@41.2736755,69.2389188,17z/data=!3m1!4b1!4m5!3m4!1s0x38ae8a89cfac6c2f:0xe4fa5b1f864e9ee8!8m2!3d41.2736755!4d69.2411075",
             "gis" : "https://2gis.uz/tashkent/branches/70000001037295460/firm/70000001036947496/69.241226%2C41.2738"
         }
+    ],
+    "gallery" : [
+        {
+            "title" : "Открытие нового филиала в Самарканде!",
+            "image" : "102_1689853408.jpg"
+        },
+        {
+            "title" : "Открытие бухарского филиала",
+            "image" : "102_1632921859.jpg"
+        },
+        {
+            "title" : "8 Марта",
+            "image" : "9_1553342550.jpg"
+        },
+        {
+            "title" : "Yapona Mama KIDS opening",
+            "image" : "9_1557300839.jpeg"
+        },
+        {
+            "title" : "открытие Yaponamama 7",
+            "image" : "25_1582115341.jpg"
+        },
+        {
+            "title" : "Озеленяем Ташкент",
+            "image" : "102_1637307330.jpg"
+        }
     ]
 }

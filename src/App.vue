@@ -774,7 +774,7 @@ li {
   }
 
   &__top {
-    margin-top: 85px;
+    margin-top: 30px;
     border-top: 1px solid #ebebeb;
     border-bottom: 1px solid #ebebeb;
     padding-top: 4rem;
