@@ -1,7 +1,7 @@
 <template>
     <template v-for="product in cardsStore.products" :key="product.name">
                 
-        <div class="box__card" v-if="groupid == product.parentGroup">
+        <div :id="product.id" class="box__card" v-if="groupid == product.parentGroup">
             <div class="box__image">
                 <img :src="`https://cdn.yaponamama.uz/products/thumbs/${product.image}`" :alt="product.name">
                 <h3 class="pt-4" @click="cardsStore.selectedProduct = product" data-bs-toggle="offcanvas"

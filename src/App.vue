@@ -12,7 +12,8 @@ export default {
       showRegister: false,
       enteredNumber: "",
       enteredName: "",
-      selectedOption : null
+      selectedOption: null,
+      searchKey: ""
     }
   },
   computed: {
@@ -116,7 +117,8 @@ export default {
             aria-controls="langOffcanvas">English</a>
           <a href="#" class="header__aksiya d-none d-xxl-flex">Sales</a>
           <a href="#" class="header__year d-none d-xxl-flex">1089</a>
-          <a href="#" class="header__search">
+          <a class="header__search" data-bs-toggle="offcanvas" href="#searchOffcanvas" role="button"
+            aria-controls="searchOffcanvas">
             <img src="../public/search.svg" alt="search">
           </a>
           <a href="#" class="header__account">
@@ -129,7 +131,8 @@ export default {
               {{ cardsStore.wishlist.length }}
             </div>
           </a>
-          <a href="#" class="header__bar d-none d-sm-block" data-bs-toggle="offcanvas" data-bs-target="#menuBar" aria-controls="menuBar">
+          <a href="#" class="header__bar d-none d-sm-block" data-bs-toggle="offcanvas" data-bs-target="#menuBar"
+            aria-controls="menuBar">
             <img src="../public/menu.svg" alt="bar">
           </a>
           <a href="#" class="header__bar d-sm-none" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu"
@@ -143,6 +146,24 @@ export default {
     </div>
   </header>
 
+  <div class="offcanvas offcanvas-top" tabindex="-1" id="searchOffcanvas" aria-labelledby="searchOffcanvas">
+    <div class="offcanvas-body">
+      <div>
+        <input type="text" placeholder="Search" v-model="searchKey">
+        <template v-for="product in cardsStore.products">
+          <a v-if="product.name.toLowerCase().includes(searchKey.toLowerCase()) && searchKey" :href="`#${product.id}`" class="alert alert-secondary d-block mt-3" role="alert">
+            {{ product.name }}
+          </a>
+        </template>
+        <template v-for="group in cardsStore.groups">
+          <a v-if="group.name.toLowerCase().includes(searchKey.toLowerCase()) && searchKey" :href="`#${group.id}`" class="alert alert-secondary d-block mt-3" role="alert">
+            {{ group.name }}
+          </a>
+          
+        </template>
+      </div>
+    </div>
+  </div>
 
   <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenu">
     <div class="offcanvas-header">
@@ -163,8 +184,8 @@ export default {
         <router-link to="/">RESTORANGA KELISH SHARTLARI</router-link>
       </div>
       <div class="row my-3">
-        <template v-for="group in cardsStore.groups" :key="`${group.name}`">            
-          <div  class="col-6 d-flex justify-content-center text-center" >
+        <template v-for="group in cardsStore.groups" :key="`${group.name}`">
+          <div class="col-6 d-flex justify-content-center text-center">
             <a class="mini__card" style="color: #201e1e; font-size: 16px;" :href="`#${group.id}`">
               <img :src='`https://cdn.yaponamama.uz/products/thumbs/${group.list_image}`' alt="miniImage">
               <p>{{ group.name.split(" ")[0] }}</p>
@@ -258,15 +279,15 @@ export default {
       </div>
     </div>
     <div class="offcanvas-body" style="margin-top: -30px;">
-      <router-link to="/" >BIZ HAQIMIZDA</router-link>
-      <router-link to="/menu" >MENU</router-link>
-      <router-link to="/" >AKSIYALAR</router-link>
-      <router-link to="/restaurants" >RESTORANLAR</router-link>
-      <router-link to="/" >YETKAZIB BERISH</router-link>
-      <router-link to="/gallery" >GALEREYA</router-link>
-      <router-link to="/" >ALOQA</router-link>
-      <router-link to="/" >ISH O'RINLARI</router-link>
-      <router-link to="/" >RESTORANGA KELISH SHARTLARI</router-link>
+      <router-link to="/">BIZ HAQIMIZDA</router-link>
+      <router-link to="/menu">MENU</router-link>
+      <router-link to="/">AKSIYALAR</router-link>
+      <router-link to="/restaurants">RESTORANLAR</router-link>
+      <router-link to="/">YETKAZIB BERISH</router-link>
+      <router-link to="/gallery">GALEREYA</router-link>
+      <router-link to="/">ALOQA</router-link>
+      <router-link to="/">ISH O'RINLARI</router-link>
+      <router-link to="/">RESTORANGA KELISH SHARTLARI</router-link>
     </div>
   </div>
 
@@ -331,7 +352,8 @@ export default {
               <p>© 2023 Yaponamama. Barcha huquqlar ximoyalangan.</p>
             </div>
           </div>
-          <div class="col-12 col-lg-6 mt-4 mt-lg-0 d-flex footer__past text-center text-lg-end justify-content-center justify-content-lg-end  align-items-center">
+          <div
+            class="col-12 col-lg-6 mt-4 mt-lg-0 d-flex footer__past text-center text-lg-end justify-content-center justify-content-lg-end  align-items-center">
             <h6>MOBIL ILOVANI KO'CHIRISH</h6>
             <a href="#">
               <img src="../public/googleplay.svg" alt="google">
@@ -364,6 +386,27 @@ export default {
 .offcanvas-xl,
 .offcanvas-xxl {
   --bs-offcanvas-width: 450px;
+}
+
+#searchOffcanvas {
+  max-width: 500px;
+  height: auto;
+  bottom: auto;
+  margin: 0 auto;
+  top: 30px;
+  border-radius: 5px;
+  bottom: auto;
+  max-height: 93vh;
+
+
+  input {
+    width: 100%;
+    padding: 12px 18px;
+    outline: none;
+    border: 1px solid #ccc;
+    color: #a3a2a2;
+    font-size: 15px;
+  }
 }
 
 #menuBar {
@@ -721,6 +764,7 @@ li {
 .footer {
   z-index: 45;
   background-color: #fff;
+
   img {
     height: 60px;
   }
@@ -742,8 +786,10 @@ li {
 
   &__past {
     flex-direction: row;
+
     @media screen and (max-width: 576px) {
-      flex-direction:column;
+      flex-direction: column;
+
       img {
         margin-top: 20px;
       }
@@ -1075,5 +1121,4 @@ li {
   height: 17px;
   border-radius: 50px;
   color: #fff;
-}
-</style>
+}</style>
