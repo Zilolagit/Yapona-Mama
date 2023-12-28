@@ -69,7 +69,6 @@ export default {
         BreadCrumb
     },
     async mounted() {
-        console.log(this.$route.params);
         let progress = this.$progress.start();
         const response = await axios.get(`http://localhost:3000/restaraunts/${this.$route.params.id}/`)
         this.restaurant = response.data

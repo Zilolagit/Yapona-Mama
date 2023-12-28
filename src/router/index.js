@@ -39,6 +39,36 @@ const router = createRouter({
       path : "/gallery/:id",
       name : "Gallery Details",
       component : () => import("@/views/GalleryDetails.vue")
+    },
+    {
+      path : "/about-us",
+      name : "About Us",
+      component : () => import("@/views/AboutUs.vue")
+    },
+    {
+      path : "/delivery",
+      name : "Delivery",
+      component : () => import("@/views/DeliveryView.vue")
+    },
+    {
+      path : "/contact",
+      name : "Contacts",
+      component : () => import("@/views/ContactView.vue")
+    },
+    {
+      path : "/vacancy",
+      name : "Vacancy",
+      component : () => import("@/views/VacancyView.vue")
+    },
+    {
+      path : "/offer",
+      name : "Public Offer",
+      component : () => import("@/views/PublicOffer.vue")
+    },
+    {
+      path : "/:pathMatch(.*)*",
+      name : "Not FOund",
+      component : () => import("@/views/NotFound.vue")
     }
   ]
 })

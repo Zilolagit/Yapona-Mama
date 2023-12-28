@@ -172,7 +172,7 @@ export default {
     </div>
     <div class="offcanvas-body">
       <div class="mobile__menu">
-        <router-link to="/">BIZ HAQIMIZDA</router-link>
+        <router-link to="/about-us">About Us</router-link>
         <router-link to="/menu">MENU</router-link>
         <router-link to="/">AKSIYALAR</router-link>
         <router-link to="/restaurants">RESTORANLAR</router-link>
@@ -279,15 +279,15 @@ export default {
       </div>
     </div>
     <div class="offcanvas-body" style="margin-top: -30px;">
-      <router-link to="/">BIZ HAQIMIZDA</router-link>
+      <router-link to="/about-us">ABOUT US</router-link>
       <router-link to="/menu">MENU</router-link>
-      <router-link to="/">AKSIYALAR</router-link>
-      <router-link to="/restaurants">RESTORANLAR</router-link>
-      <router-link to="/">YETKAZIB BERISH</router-link>
-      <router-link to="/gallery">GALEREYA</router-link>
-      <router-link to="/">ALOQA</router-link>
-      <router-link to="/">ISH O'RINLARI</router-link>
-      <router-link to="/">RESTORANGA KELISH SHARTLARI</router-link>
+      <router-link to="/">SALES</router-link>
+      <router-link to="/restaurants">RESTAURANTS</router-link>
+      <router-link to="/delivery">DELIVERY</router-link>
+      <router-link to="/gallery">GALLERY</router-link>
+      <router-link to="/contact">CONTACT</router-link>
+      <router-link to="/vacancy">VACANCY</router-link>
+      <router-link to="/">RESTAURANT VISITING RULES</router-link>
     </div>
   </div>
 
@@ -314,17 +314,17 @@ export default {
           <div class="col-12 col-lg-8">
             <div class="d-flex justify-content-between footer__part">
               <ul class="footer__menu">
-                <li>BIZ HAQIMIZDA</li>
-                <li>MENU</li>
-                <li>AKSIYALAR</li>
-                <li>RESTORANLAR</li>
-                <li>YETKAZIB BERISH</li>
+                <li><router-link to="/about-us">About Us</router-link></li>
+                <li><router-link to="/menu">Menu</router-link> </li>
+                <li><router-link to="/">Sales</router-link></li>
+                <li><router-link to="/restaurants">Restaurant</router-link> </li>
+                <li><router-link to="/delivery">Delivery</router-link></li>
               </ul>
               <ul class="footer__menu">
-                <li>GALEREYA</li>
-                <li>ALOQA</li>
-                <li>OMMAVIY TAKLIF</li>
-                <li>RESTORANGA KELISH SHARTLARI</li>
+                <li><router-link to="/gallery">Gallery</router-link> </li>
+                <li><router-link to="/contact">Contacts</router-link></li>
+                <li><router-link to="/">Public Offer</router-link></li>
+                <li><router-link to="/">Restaurant Visiting Rules</router-link></li>
               </ul>
               <div class="footer__social text-center text-sm-end">
                 <p class="footer__tel">
@@ -842,6 +842,9 @@ li {
 
       &:hover {
         text-decoration: underline;
+      }
+      a {
+        color: #201e1e;
       }
     }
   }
