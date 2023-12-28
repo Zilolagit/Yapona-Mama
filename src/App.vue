@@ -287,7 +287,8 @@ export default {
       <router-link to="/gallery">GALLERY</router-link>
       <router-link to="/contact">CONTACT</router-link>
       <router-link to="/vacancy">VACANCY</router-link>
-      <router-link to="/">RESTAURANT VISITING RULES</router-link>
+      <router-link to="/offer">PUBLIC OFFER</router-link>
+      <router-link to="/rules">RESTAURANT VISITING RULES</router-link>
     </div>
   </div>
 
@@ -323,8 +324,8 @@ export default {
               <ul class="footer__menu">
                 <li><router-link to="/gallery">Gallery</router-link> </li>
                 <li><router-link to="/contact">Contacts</router-link></li>
-                <li><router-link to="/">Public Offer</router-link></li>
-                <li><router-link to="/">Restaurant Visiting Rules</router-link></li>
+                <li><router-link to="/offer">Public Offer</router-link></li>
+                <li><router-link to="/rules">Restaurant Visiting Rules</router-link></li>
               </ul>
               <div class="footer__social text-center text-sm-end">
                 <p class="footer__tel">
