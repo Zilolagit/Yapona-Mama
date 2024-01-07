@@ -9,7 +9,7 @@
                     <img src="https://cdn.yaponamama.uz/sliders/slider_1691068968.png" class="d-block w-100" alt="image-1">
                 </div>
                 <div class="carousel-item">
-                    <img src="	https://cdn.yaponamama.uz/sliders/slider_1699855368.png" class="d-block w-100" alt="image-1">
+                    <img src="https://cdn.yaponamama.uz/sliders/slider_1699855368.png" class="d-block w-100" alt="image-1">
                 </div>
                 <div class="carousel-item">
                     <img src="https://cdn.yaponamama.uz/sliders/slider_1688372610.png" class="d-block w-100" alt="image-2">
